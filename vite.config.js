@@ -15,15 +15,7 @@ export default defineConfig({
   // (local builds, previews) relative "./" keeps paths portable.
   base: process.env.GITHUB_ACTIONS === "true" ? "/KMASAJT/" : "./",
   build: {
-    outDir: "dist",
+    outDir: 'dist',
     emptyOutDir: true,
-  },
-  server: {
-    host: "0.0.0.0",
-    port: 3000,
-    strictPort: true,
-    hmr: {
-      port: 3000,
-    },
-  },
-});
+  }
+})

@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+
+  --color-ink: #161f17;
+  --color-pine-950: #0c1a12;
+  --color-pine-900: #12251a;
+  --color-pine-800: #1a3424;
+  --color-pine-700: #24452f;
+  --color-pine-600: #2f573c;
+  --color-moss-500: #4e7d5b;
+  --color-moss-400: #6b9a77;
+  --color-sage-300: #a9c4ae;
+  --color-sage-200: #cbdccb;
+  --color-sage-100: #e2ecdf;
+  --color-paper: #f4f1e7;
+  --color-cream: #fbf9f2;
+  --color-rasp-700: #a31a3d;
+  --color-rasp-600: #c22249;
+  --color-rasp-500: #d92e57;
+  --color-rasp-400: #e85c7d;
+  --color-rasp-100: #f9d9e1;
+  --color-honey-500: #d99a2b;
+  --color-honey-400: #e9b44c;
+  --color-honey-300: #f2cb7a;
+  --color-honey-100: #f9e9c6;
+
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-marquee-rev: marquee-rev 40s linear infinite;
+  --animate-kenburns: kenburns 18s ease-in-out infinite alternate;
+  --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+  --animate-spin-slow: spin 22s linear infinite;
+  --animate-fade-page: fade-page 0.5s ease both;
+  --animate-float-soft: float-soft 6s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-rev {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+@keyframes kenburns {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.12) translate(1.5%, -1.5%); }
+}
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.8); opacity: 0.45; }
+}
+@keyframes fade-page {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream text-ink font-body antialiased;
+  position: relative;
+}
+
+/* Fina zrno-struktura preko cele strane */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: var(--color-rasp-500);
+  color: var(--color-cream);
+}
+
+/* ── Scroll reveal sistem ─────────────────────────────────── */
+.rv {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--rv-delay, 0ms);
+  will-change: opacity, transform;
+}
+.rv-left { transform: translateX(-34px); }
+.rv-right { transform: translateX(34px); }
+.rv-scale { transform: scale(0.94); }
+.rv.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Maskirani naslovi — red po red izranja */
+.lm {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+.lm > span {
+  display: block;
+  transform: translateY(115%);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--lm-delay, 0ms);
+}
+.in .lm > span,
+.lm.in > span {
+  transform: none;
+}
+
+/* ── Marquee traka ────────────────────────────────────────── */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: var(--animate-marquee);
+}
+.marquee-track.rev {
+  animation: var(--animate-marquee-rev);
+}
+.marquee-paused:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* ── Accordion (baza znanja / FAQ) ────────────────────────── */
+.acc-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.acc-body.open {
+  grid-template-rows: 1fr;
+}
+.acc-body > div {
+  overflow: hidden;
+}
+
+/* ── CTA dugmad ───────────────────────────────────────────── */
+.btn {
+  @apply inline-flex items-center justify-center gap-2.5 font-semibold tracking-tight select-none cursor-pointer whitespace-nowrap;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.25s, color 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn .btn-arrow {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn:hover .btn-arrow {
+  transform: translateX(5px);
+}
+.btn-rasp {
+  @apply bg-rasp-600 text-cream shadow-lg shadow-rasp-600/30;
+}
+.btn-rasp:hover {
+  @apply bg-rasp-500 shadow-xl shadow-rasp-500/40;
+}
+.btn-pine {
+  @apply bg-pine-900 text-cream shadow-lg shadow-pine-900/25;
+}
+.btn-pine:hover {
+  @apply bg-pine-800;
+}
+.btn-ghost {
+  @apply border border-pine-800/25 text-pine-900 bg-transparent;
+}
+.btn-ghost:hover {
+  @apply border-pine-800 bg-sage-100;
+}
+.btn-ghostlight {
+  @apply border border-cream/30 text-cream bg-transparent;
+}
+.btn-ghostlight:hover {
+  @apply bg-cream/10 border-cream/60;
+}
+
+/* ── Polja obrasca ────────────────────────────────────────── */
+.field {
+  @apply w-full bg-cream border border-pine-800/20 px-4 py-3 text-[15px] text-ink placeholder:text-ink/35 outline-none;
+  transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
+}
+.field:focus {
+  @apply border-moss-500 bg-white;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-moss-500) 22%, transparent);
+}
+.field.err {
+  @apply border-rasp-600;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-rasp-600) 15%, transparent);
+}
+
+/* ── Dekor: redovi zasada (tanke linije u pozadini) ───────── */
+.field-rows {
+  background-image: repeating-linear-gradient(
+    115deg,
+    transparent 0 46px,
+    color-mix(in srgb, var(--color-moss-500) 14%, transparent) 46px 47px
+  );
+}
+
+/* Tanka tekstura za tamne sekcije */
+.dark-rows {
+  background-image: repeating-linear-gradient(
+    115deg,
+    transparent 0 46px,
+    rgba(251, 249, 242, 0.05) 46px 47px
+  );
+}
+
+/* ── Smanjeno kretanje ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .rv,
+  .lm > span {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .marquee-track {
+    animation: none !important;
+  }
+}

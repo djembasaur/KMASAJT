@@ -87,6 +87,14 @@ body::after {
   color: var(--color-cream);
 }
 
+/* Sigurnosna mreža za slike: container-isk izgled i ako se slika
+   ne učita (tamna pozadina umesto broken-placeholdera) */
+img {
+  display: block;
+  max-width: 100%;
+  background-color: var(--color-pine-800);
+}
+
 /* ── Scroll reveal sistem ─────────────────────────────────── */
 .rv {
   opacity: 0;

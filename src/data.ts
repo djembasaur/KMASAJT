@@ -4,17 +4,22 @@
 
 import type { Route } from "./lib/router";
 
+/* Slike se nalaze u public/ folderu na GitHub repozitorijumu.
+   import.meta.env.BASE_URL obezbeđuje apsolutnu putanju koja radi
+   i na GitHub Pages podfolderu (/KMASAJT/hero.jpg) i lokalno. */
+const img = (file: string) => `${import.meta.env.BASE_URL}${file}`;
+
 export const IMG = {
-  hero: "https://www.insakma.com/assets/hero.jpg",
-  sadnice: "https://www.insakma.com/assets/sadnice.jpg",
-  nursery: "https://www.insakma.com/assets/nursery.jpg",
-  coirBags: "https://www.insakma.com/assets/coir-bags.jpg",
-  greenhouse: "https://www.insakma.com/assets/greenhouse.jpg",
-  plants: "https://www.insakma.com/assets/plants.jpg",
-  berries: "https://www.insakma.com/assets/berries.jpg",
-  harvest: "https://www.insakma.com/assets/harvest.jpg",
-  handberry: "https://www.insakma.com/assets/handberry.jpg",
-  crates: "https://www.insakma.com/assets/crates.jpg",
+  hero: img("hero.jpg"),
+  sadnice: img("sadnice.jpg"),
+  nursery: img("nursery.jpg"),
+  coirBags: img("coir-bags.jpg"),
+  greenhouse: img("greenhouse.jpg"),
+  plants: img("plants.jpg"),
+  berries: img("berries.jpg"),
+  harvest: img("harvest.jpg"),
+  handberry: img("handberry.jpg"),
+  crates: img("crates.jpg"),
 } as const;
 
 export const CONTACT = {

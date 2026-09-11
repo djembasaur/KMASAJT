@@ -415,7 +415,8 @@ export function LogoMark({ className = "w-9 h-9" }: IP) {
     <img
       src={`${import.meta.env.BASE_URL}logo-leaf.png`}
       alt="INSA KMA Fields logo"
-      className={`${className} object-contain bg-transparent`}
+      className={`${className} object-contain`}
+      style={{ backgroundColor: "transparent" }}
     />
   );
 }

@@ -413,7 +413,7 @@ export const Icons = {
 export function LogoMark({ className = "w-9 h-9" }: IP) {
   return (
     <img
-      src="/logo-leaf.png"
+      src={`${import.meta.env.BASE_URL}logo-leaf.png`}
       alt="INSA KMA Fields logo"
       className={`${className} object-contain`}
     />

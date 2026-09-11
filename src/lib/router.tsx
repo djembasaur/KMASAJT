@@ -4,6 +4,13 @@ import React, { useEffect, useState, useCallback } from "react";
    history.pushState/popstate umesto location.hash da Google indeksira
    svaku stranicu kao poseban URL. */
 
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+    mt?: (...args: any[]) => void;
+  }
+}
+
 export type Route =
   | "/"
   | "/supstrat"

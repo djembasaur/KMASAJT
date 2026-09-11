@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useRoute, type Route } from "./lib/router";
 import { Footer, FloatCTA, Header } from "./components/Chrome";
 import Home from "./pages/Home";
@@ -38,6 +38,7 @@ const PAGES: Record<Route, React.ComponentType> = {
 export default function App() {
   const route = useRoute();
   const Page = PAGES[route];
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
     document.title = TITLES[route];
@@ -49,6 +50,24 @@ export default function App() {
     document
       .querySelector('link[rel="canonical"]')
       ?.setAttribute("href", `https://www.insakma.com${route === "/" ? "" : route}`);
+
+    // GA4 — gtag config koristi send_page_view: false, pa čak i prvi
+    // page_view (inicijalni load) mora ručno da se pošalje ovde.
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", {
+        page_path: route,
+        page_location: window.location.href,
+        page_title: document.title,
+      });
+    }
+
+    // Mautic — mtc.js skripta na dnu <body> već šalje pageview na
+    // inicijalni load, pa ovde preskačemo prvi render i šaljemo samo
+    // na stvarnu promenu rute (klik na link ili "Nazad" u pretraživaču).
+    if (!isFirstRender.current && typeof window.mt === "function") {
+      window.mt("send", "pageview");
+    }
+    isFirstRender.current = false;
 
     // Signal za scripts/prerender.mjs: React je izrenderovao trenutnu
     // rutu, headless browser može da sačuva page.content() kao snapshot.

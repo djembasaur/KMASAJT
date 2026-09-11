@@ -10,10 +10,13 @@ export default defineConfig({
   // subpath — the "unstyled page" failure mode becomes impossible.
   // Images from public/ remain separate files and keep working.
   plugins: [react(), tailwindcss(), viteSingleFile()],
-  // GitHub Pages serves the site under /KMASAJT/ — on the Actions runner
-  // (GITHUB_ACTIONS=true) assets get that absolute base. Everywhere else
-  // (local builds, previews) relative "./" keeps paths portable.
-  base: process.env.GITHUB_ACTIONS === "true" ? "/KMASAJT/" : "./",
+  // Custom domain (www.insakma.com, see public/CNAME) serves the site from
+  // the domain root, so base is "/" for the production build. If the custom
+  // domain is ever removed and the site falls back to plain GitHub Pages
+  // (djembasaur.github.io/KMASAJT/), this needs to change back to
+  // "/KMASAJT/" for GITHUB_ACTIONS builds. Local dev/preview keeps "./" so
+  // relative asset paths work when previewing dist/ directly from disk.
+  base: process.env.GITHUB_ACTIONS === "true" ? "/" : "./",
   build: {
     outDir: 'dist',
     emptyOutDir: true,

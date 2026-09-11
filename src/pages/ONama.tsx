@@ -1,6 +1,7 @@
 import React from "react";
 import { CONTACT, IMG } from "../data";
 import { CTA, Icons, Kicker, Reveal } from "../lib/ui";
+import { Link } from "../lib/router";
 import PageHero from "../components/PageHero";
 import { FinalCTA } from "./Home";
 
@@ -90,8 +91,8 @@ function Pillars() {
         <div className="mt-12 divide-y divide-cream/12 border-y border-cream/12">
           {rows.map((r, i) => (
             <Reveal key={r.n} delay={i * 100}>
-              <a
-                href={`#${r.to}`}
+              <Link
+                to={r.to}
                 className="group grid md:grid-cols-[90px_1fr_auto] gap-5 items-center py-7 transition-colors hover:bg-pine-800/40 px-2 -mx-2"
               >
                 <span className="font-display font-black text-[40px] leading-none text-pine-700 group-hover:text-rasp-500 transition-colors">
@@ -107,7 +108,7 @@ function Pillars() {
                   {r.link}
                   <Icons.arrow className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" />
                 </span>
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>
@@ -187,7 +188,7 @@ function ContactPerson() {
         </Reveal>
         <Reveal variant="rv-right" delay={200}>
           <div className="flex flex-col gap-3">
-            <CTA id="cta-o-nama" href="#/kontakt">
+            <CTA id="cta-o-nama" href="/kontakt">
               Zatražite ponudu
             </CTA>
             <a href={CONTACT.phoneHref} className="btn btn-ghost px-5 py-3 text-[15px]">
@@ -221,7 +222,7 @@ export default function ONama() {
           { icon: <Icons.doc className="w-4 h-4 text-moss-500" />, label: "Podrška do berbe" },
         ]}
       >
-        <CTA id="cta-o-nama-hero" href="#/kontakt" size="lg">
+        <CTA id="cta-o-nama-hero" href="/kontakt" size="lg">
           Zatražite ponudu
         </CTA>
         <a href={CONTACT.phoneHref} className="btn btn-ghost px-6 py-4 text-base">

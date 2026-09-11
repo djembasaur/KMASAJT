@@ -63,7 +63,7 @@ function ArticleCard({ a, i }: { a: Article; i: number }) {
                 </p>
               ))}
               <a
-                href="#/kontakt"
+                href="/kontakt"
                 className="inline-flex items-center gap-2 font-semibold text-rasp-600 hover:text-rasp-500 transition-colors pt-1"
               >
                 Postavite pitanje stručnjaku
@@ -149,7 +149,7 @@ export default function BazaZnanja() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <CTA id="cta-baza" href="#/kontakt" size="lg">
+              <CTA id="cta-baza" href="/kontakt" size="lg">
                 Postavite pitanje
               </CTA>
               <a href={CONTACT.phoneHref} className="btn btn-ghostlight px-6 py-4 text-base">

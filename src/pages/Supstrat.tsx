@@ -35,7 +35,7 @@ function SpecTable() {
             EC od prvog dana. Prilagođen klimi Srbije: podnosi visoke letnje temperature
             i sušne periode.
           </p>
-          <CTA id="cta-supstrat-spec" href="#/kontakt" variant="btn-pine" className="mt-8">
+          <CTA id="cta-supstrat-spec" href="/kontakt" variant="btn-pine" className="mt-8">
             Zatražite kompletnu specifikaciju
           </CTA>
         </Reveal>
@@ -203,7 +203,7 @@ function Sizes() {
             Tačnu specifikaciju svih osam dimenzija šaljemo uz ponudu — navedite kulturu
             i sistem gajenja, pa preporučujemo format.
           </p>
-          <CTA id="cta-supstrat" href="#/kontakt" size="lg" className="mt-8">
+          <CTA id="cta-supstrat" href="/kontakt" size="lg" className="mt-8">
             Zatražite ponudu
           </CTA>
         </Reveal>
@@ -397,7 +397,7 @@ export default function Supstrat() {
           { icon: <Icons.leaf className="w-4 h-4 text-moss-500" />, label: "100% bez treseta" },
         ]}
       >
-        <CTA id="cta-supstrat-hero" href="#/kontakt" size="lg">
+        <CTA id="cta-supstrat-hero" href="/kontakt" size="lg">
           Zatražite ponudu
         </CTA>
         <a href={CONTACT.phoneHref} className="btn btn-ghost px-6 py-4 text-base">

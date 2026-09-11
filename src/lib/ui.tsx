@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { navigate, withBase, BASE, type Route } from "./router";
 
 /* ── Hookovi ─────────────────────────────────────────────── */
 
@@ -159,16 +160,26 @@ export function CTA({
   className?: string;
   onClick?: () => void;
 }) {
+  const isInternal = href.startsWith("/");
   return (
     <a
       id={id}
-      href={href}
-      onClick={() => {
+      href={isInternal ? withBase(href as Route) : href}
+      onClick={(e) => {
         try {
           (window as any).dataLayer = (window as any).dataLayer || [];
           (window as any).dataLayer.push({ event: "cta_click", cta_id: id });
         } catch {}
         onClick?.();
+        if (
+          isInternal &&
+          !e.defaultPrevented &&
+          e.button === 0 &&
+          !(e.metaKey || e.altKey || e.ctrlKey || e.shiftKey)
+        ) {
+          e.preventDefault();
+          navigate(href as Route);
+        }
       }}
       className={`btn ${variant} ${
         size === "lg" ? "px-7 py-4 text-base" : "px-5 py-3 text-[15px]"
@@ -413,7 +424,7 @@ export const Icons = {
 export function LogoMark({ className = "w-9 h-9" }: IP) {
   return (
     <img
-      src={`${import.meta.env.BASE_URL}logo-leaf.png`}
+      src={`${BASE}logo-leaf.png`}
       alt="INSA KMA Fields logo"
       className={`${className} object-contain`}
       style={{ backgroundColor: "transparent" }}

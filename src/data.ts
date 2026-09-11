@@ -2,12 +2,12 @@
    INSA KMA Fields — centralni sadržaj (izvor: www.insakma.com)
    ───────────────────────────────────────────────────────────── */
 
-import type { Route } from "./lib/router";
+import { BASE, type Route } from "./lib/router";
 
-/* Slike se nalaze u public/ folderu na GitHub repozitorijumu.
-   import.meta.env.BASE_URL obezbeđuje apsolutnu putanju koja radi
-   i na GitHub Pages podfolderu (/KMASAJT/hero.jpg) i lokalno. */
-const img = (file: string) => `${import.meta.env.BASE_URL}${file}`;
+/* Slike se nalaze u public/ folderu. BASE je normalizovana apsolutna
+   putanja (vidi lib/router) — sprečava da se slike lome kad se sa
+   pushState rutiranja pređe na ne-root rutu (npr. /sadnice). */
+const img = (file: string) => `${BASE}${file}`;
 
 export const IMG = {
   hero: img("hero.jpg"),

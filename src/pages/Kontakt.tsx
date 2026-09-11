@@ -369,10 +369,10 @@ export default function Kontakt() {
             Sezona <span className="text-honey-300">proleće / jesen 2027.</span> se planira sada.
           </p>
           <div className="flex flex-wrap gap-4">
-            <CTA id="cta-kontakt-final" href="#/sadnice">
+            <CTA id="cta-kontakt-final" href="/sadnice">
               Rezervišite sadnice
             </CTA>
-            <CTA id="cta-kontakt-supstrat" href="#/supstrat" variant="btn-ghostlight">
+            <CTA id="cta-kontakt-supstrat" href="/supstrat" variant="btn-ghostlight">
               Kokosov supstrat
             </CTA>
           </div>

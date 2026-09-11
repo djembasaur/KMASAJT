@@ -83,7 +83,7 @@ export function Header({ route }: { route: Route }) {
               <Icons.phone className="w-4 h-4 text-moss-500" />
               {CONTACT.phone}
             </a>
-            <CTA id="cta-header" href="#/kontakt" size="md">
+            <CTA id="cta-header" href="/kontakt" size="md">
               Zatražite ponudu
             </CTA>
           </div>
@@ -162,7 +162,7 @@ export function Header({ route }: { route: Route }) {
             </a>
             <CTA
               id="cta-mobile-menu"
-              href="#/kontakt"
+              href="/kontakt"
               onClick={() => setOpen(false)}
               className="w-full"
             >
@@ -271,7 +271,7 @@ export function Footer() {
               <Icons.pin className="w-4 h-4 text-rasp-400 shrink-0" /> Dostava širom Srbije
             </p>
           </div>
-          <CTA id="cta-footer" href="#/kontakt" className="mt-6">
+          <CTA id="cta-footer" href="/kontakt" className="mt-6">
             Zatražite ponudu
           </CTA>
         </div>

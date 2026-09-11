@@ -127,7 +127,7 @@ function VarietyDetails() {
             Sadni materijal se prodaje i rezerviše jednom godišnje, u ograničenim
             količinama.
           </p>
-          <CTA id="cta-sadnice" href="#/kontakt" variant="btn-pine" size="lg" className="shrink-0 bg-pine-950 hover:bg-pine-900">
+          <CTA id="cta-sadnice" href="/kontakt" variant="btn-pine" size="lg" className="shrink-0 bg-pine-950 hover:bg-pine-900">
             Rezervišite sadnice
           </CTA>
         </Reveal>
@@ -212,7 +212,7 @@ function Density() {
           </h2>
         </Reveal>
         <Reveal variant="rv-right" delay={200}>
-          <CTA id="cta-sadnice-gustina" href="#/kontakt" variant="btn-pine">
+          <CTA id="cta-sadnice-gustina" href="/kontakt" variant="btn-pine">
             Dogovorite planiranje
           </CTA>
         </Reveal>
@@ -295,7 +295,7 @@ export default function Sadnice() {
           { icon: <Icons.berry className="w-4 h-4 text-moss-500" />, label: "3 remontantne sorte" },
         ]}
       >
-        <CTA id="cta-sadnice-hero" href="#/kontakt" size="lg">
+        <CTA id="cta-sadnice-hero" href="/kontakt" size="lg">
           Rezervišite sadnice
         </CTA>
         <a href={CONTACT.phoneHref} className="btn btn-ghost px-6 py-4 text-base">

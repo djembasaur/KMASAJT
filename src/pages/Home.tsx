@@ -80,7 +80,7 @@ function Hero() {
           </Reveal>
 
           <Reveal delay={480} className="mt-8 flex flex-wrap items-center gap-4">
-            <CTA id="cta-home" href="#/kontakt" size="lg">
+            <CTA id="cta-home" href="/kontakt" size="lg">
               Zatražite ponudu
             </CTA>
             <a
@@ -421,7 +421,7 @@ function Varieties() {
             ograničenim količinama — prema planu proizvodnje matičnih rasadnika.
             Dostupnost i termine za vaš zasad proverite na vreme.
           </p>
-          <CTA id="cta-home-sorte" href="#/sadnice" variant="btn-pine" className="shrink-0">
+          <CTA id="cta-home-sorte" href="/sadnice" variant="btn-pine" className="shrink-0">
             Rezervišite sadnice
           </CTA>
         </div>
@@ -479,7 +479,7 @@ function Subsidies() {
           </ul>
           <CTA
             id="cta-home-subvencije"
-            href="#/kontakt"
+            href="/kontakt"
             variant="btn-pine"
             size="lg"
             className="mt-8"
@@ -630,7 +630,7 @@ export function FinalCTA({ idPrefix }: { idPrefix: string }) {
             </p>
           </Reveal>
           <Reveal delay={140} className="mt-8 flex flex-wrap gap-4">
-            <CTA id={`cta-${idPrefix}-final`} href="#/kontakt" size="lg">
+            <CTA id={`cta-${idPrefix}-final`} href="/kontakt" size="lg">
               Zatražite ponudu
             </CTA>
             <a

@@ -220,6 +220,25 @@ export const SUBSTRATE_SPECS = [
   { k: "Klimatska otpornost", v: "Visoke letnje temperature i sušni periodi" },
 ];
 
+export const SUBSTRATE_ORIGIN = {
+  manufacturer: "Remmy Substrates (Indija)",
+  since: 1994,
+  url: "https://www.remmysubstrates.com",
+  facts: [
+    "Porodična kompanija u drugoj generaciji, aktivna od 1994. godine",
+    "Sopstveni proizvodni pogon od preko 20 hektara u regionu Pollachi, južna Indija",
+    "Sopstvena laboratorija za kontrolu kvaliteta i sopstvena flota za transport",
+    "Izvoz u Holandiju, SAD, Kanadu, Meksiko i druge zemlje sveta",
+  ],
+} as const;
+
+export const SUBSTRATE_CERTS = [
+  { id: "rhp", name: "RHP", img: img("cert-rhp.jpg") },
+  { id: "mps-ecas", name: "MPS-ECAS", img: img("cert-mps-ecas.jpg") },
+  { id: "sa8000", name: "SA 8000", img: img("cert-sa8000.jpg") },
+  { id: "omri", name: "OMRI Listed", img: img("cert-omri.jpg") },
+] as const;
+
 export const COIR_VS_PEAT = [
   { label: "Vek trajanja u proizvodnji", coir: "3–4 godine", peat: "1–2 godine" },
   { label: "Stabilnost pH i EC od prvog dana", coir: "Da — 2× ispran i puferisan", peat: "Zavisi od izvora i pripreme" },

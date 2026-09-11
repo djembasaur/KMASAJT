@@ -4,6 +4,8 @@ import {
   CONTACT,
   IMG,
   SUBSTRAT_FAQ,
+  SUBSTRATE_CERTS,
+  SUBSTRATE_ORIGIN,
   SUBSTRATE_SPECS,
   USES,
 } from "../data";
@@ -55,6 +57,73 @@ function SpecTable() {
             </div>
           </Reveal>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function Origin() {
+  return (
+    <section className="bg-paper border-y border-pine-800/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <Reveal>
+            <Kicker>Poreklo</Kicker>
+            <h2 className="mt-4 font-display font-black text-pine-900 tracking-tight text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.06]">
+              Supstrat sa <em className="italic text-rasp-600">poznatim poreklom</em>
+            </h2>
+            <p className="mt-5 text-[16px] leading-relaxed text-ink/75">
+              INSA supstrat nije nepoznata roba — proizvodi ga {SUBSTRATE_ORIGIN.manufacturer},
+              porodična kompanija aktivna od {SUBSTRATE_ORIGIN.since}. godine, specijalizovana
+              isključivo za preradu kokosovih vlakana u profesionalne supstrate za povrtarsku i
+              voćarsku proizvodnju.
+            </p>
+            <p className="mt-4 font-mono text-[13px] uppercase tracking-[0.12em] text-moss-500">
+              Proizvodnja sertifikovana po RHP, MPS-ECAS, SA 8000 i OMRI Listed standardima
+            </p>
+          </Reveal>
+        </div>
+        <Reveal variant="rv-right" delay={120}>
+          <ul className="space-y-3 bg-white border border-pine-800/15 p-6 sm:p-8">
+            {SUBSTRATE_ORIGIN.facts.map((f, i) => (
+              <li key={i} className="flex items-start gap-3 text-[15.5px] text-ink/85">
+                <span className="mt-0.5 w-5 h-5 shrink-0 bg-rasp-600/10 text-rasp-600 flex items-center justify-center">
+                  <Icons.check className="w-3.5 h-3.5" />
+                </span>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <a
+            href={SUBSTRATE_ORIGIN.url}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-block font-mono text-[12px] uppercase tracking-[0.14em] text-moss-500 hover:text-rasp-600 transition-colors"
+          >
+            Proizvođač: remmysubstrates.com ↗
+          </a>
+        </Reveal>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-20 lg:pb-24">
+        <Reveal delay={200}>
+          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-moss-500 mb-4">
+            Sertifikati proizvođača
+          </p>
+          <div className="flex flex-wrap gap-4">
+            {SUBSTRATE_CERTS.map((c) => (
+              <div
+                key={c.id}
+                className="bg-white border border-pine-800/15 p-3 flex items-center justify-center"
+              >
+                <img
+                  src={c.img}
+                  alt={`${c.name} sertifikat`}
+                  className="h-14 w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -338,6 +407,7 @@ export default function Supstrat() {
       </PageHero>
 
       <SpecTable />
+      <Origin />
       <Comparison />
       <Sizes />
       <Uses />

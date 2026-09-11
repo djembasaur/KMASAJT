@@ -49,6 +49,10 @@ export default function App() {
     document
       .querySelector('link[rel="canonical"]')
       ?.setAttribute("href", `https://www.insakma.com${route === "/" ? "" : route}`);
+
+    // Signal za scripts/prerender.mjs: React je izrenderovao trenutnu
+    // rutu, headless browser može da sačuva page.content() kao snapshot.
+    document.documentElement.dataset.prerenderReady = "true";
   }, [route]);
 
   return (

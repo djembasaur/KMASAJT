@@ -9,7 +9,7 @@ export default defineConfig({
   // external .css/.js asset URLs left to 404 — the "unstyled page"
   // failure mode becomes impossible. Images from public/ remain separate
   // files and keep working via absolute root paths.
-  plugins: [react(), tailwindcss(), viteSingleFile()],
+  plugins: [react(), tailwindcss(), viteSingleFile({ overrideConfig: { base: "/" } })],
   // Fixed to "/" unconditionally. The site has a permanent custom domain
   // (www.insakma.com, see public/CNAME) that serves from the domain root,
   // so there's no longer a need to branch on GITHUB_ACTIONS.

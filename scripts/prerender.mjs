@@ -84,7 +84,12 @@ async function main() {
   await new Promise((resolve) => server.listen(PORT, resolve));
   console.log(`Lokalni server za prerendering pokrenut na :${PORT}`);
 
-  const browser = await puppeteer.launch();
+  // --no-sandbox: GitHub Actions runners don't have the user namespaces
+  // Chrome's sandbox needs, so an unflagged launch crashes immediately
+  // there (harmless locally too, since we only ever load our own build).
+  const browser = await puppeteer.launch({
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
 
   try {
     const page = await browser.newPage();

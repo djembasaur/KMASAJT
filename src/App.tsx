@@ -25,7 +25,7 @@ const CROP_PAGES = Object.fromEntries(
 const TITLES: Record<Route, string> = {
   ...CROP_TITLES,
   "/": "INSA KMA Fields — Sertifikovane sadnice maline i kokosov supstrat",
-  "/supstrat": "INSA KMA Fields — Kokosov supstrat (pH 5.5–6.5, EC < 0.2)",
+  "/supstrat": "INSA KMA Fields — INSA REMMY kokosov supstrat (pH 5.5–6.5, EC < 0.2)",
   "/sadnice": "INSA KMA Fields — Sadnice maline (Enrosadira, Easy Rose, Ofelia)",
   "/o-nama": "INSA KMA Fields — O nama, partner u proizvodnji",
   "/baza-znanja": "INSA KMA Fields — Baza znanja: sadnice, supstrat, subvencije",
@@ -35,7 +35,7 @@ const TITLES: Record<Route, string> = {
 const DESCRIPTIONS: Record<Route, string> = {
   ...CROP_DESCRIPTIONS,
   "/": "EU-sertifikovane sadnice maline (Enrosadira, Easy Rose, Ofelia) iz Italije i Holandije i kokosov supstrat za klimu Srbije. Subvencije 40–70%, dostava Srbijom.",
-  "/supstrat": "Premium kokosov supstrat za malinu — 100% kokos bez treseta, ispran i puferisan, pH 5.5–6.5 i EC < 0.2 mS/cm. Vek 3–4 godine, vreće od 1.5 do 80 litara.",
+  "/supstrat": "Premium INSA REMMY kokosov supstrat za malinu — 100% kokos bez treseta, ispran i puferisan, pH 5.5–6.5 i EC < 0.2 mS/cm. Vek 3–4 godine, vreće od 1.5 do 80 litara.",
   "/sadnice": "EU-sertifikovane sadnice maline Enrosadira, Easy Rose i Ofelia iz rasadnika Italije i Holandije — dokumentovano poreklo i ograničene godišnje rezervacije.",
   "/o-nama": "INSA KMA Fields — partner u proizvodnji maline: uvoz sertifikovanih sadnica i kokosovog supstrata uz stručnu podršku od planiranja zasada do berbe i subvencija.",
   "/baza-znanja": "Praktični vodič za proizvođače maline: gustina sadnje, fertirigacija, izbor supstrata i postupak za subvencije 40–70% za sertifikovan sadni materijal.",

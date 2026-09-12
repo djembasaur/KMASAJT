@@ -14,6 +14,7 @@ export const IMG = {
   sadnice: img("sadnice.jpg"),
   nursery: img("nursery.jpg"),
   coirBags: img("coir-bags.jpg"),
+  remmyLineup: img("insa-remmy-in-line.jpg"),
   greenhouse: img("greenhouse.jpg"),
   plants: img("plants.jpg"),
   berries: img("berries.jpg"),
@@ -245,14 +246,6 @@ export const COIR_VS_PEAT = [
   { label: "Aeracija i vlaknasta struktura", coir: "Odlična, stabilna kroz sezone", peat: "Opada razgradnjom" },
   { label: "Otpornost na visoke temperature", coir: "Visoka", peat: "Umerena" },
   { label: "Rizik od štetnih soli", coir: "Bez štetnih soli", peat: "Moguć, zavisi od nalazišta" },
-];
-
-export const USES = [
-  { icon: "berry", label: "Maline" },
-  { icon: "drop", label: "Borovnice" },
-  { icon: "leaf", label: "Jagode" },
-  { icon: "sun", label: "Povrće" },
-  { icon: "flower", label: "Cveće" },
 ];
 
 export type CropGroup = "Bobičasto voće" | "Povrće" | "Ostalo";

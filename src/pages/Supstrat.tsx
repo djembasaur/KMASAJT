@@ -8,7 +8,6 @@ import {
   SUBSTRATE_CERTS,
   SUBSTRATE_ORIGIN,
   SUBSTRATE_SPECS,
-  USES,
   type CropGroup,
 } from "../data";
 import { CTA, Icons, Kicker, Reveal } from "../lib/ui";
@@ -34,9 +33,9 @@ function SpecTable() {
             Brojke koje znače <em className="italic text-rasp-600">stabilnost</em>
           </h2>
           <p className="mt-5 text-[16px] leading-relaxed text-ink/75">
-            100% kokosov supstrat bez treseta, 2× ispran i puferisan — sa stabilnim pH i
-            EC od prvog dana. Prilagođen klimi Srbije: podnosi visoke letnje temperature
-            i sušne periode.
+            100% INSA REMMY kokosov supstrat bez treseta, 2× ispran i puferisan — sa
+            stabilnim pH i EC od prvog dana. Prilagođen klimi Srbije: podnosi visoke
+            letnje temperature i sušne periode.
           </p>
           <CTA id="cta-supstrat-spec" href="/kontakt" variant="btn-pine" className="mt-8">
             Zatražite kompletnu specifikaciju
@@ -73,10 +72,10 @@ function Origin() {
           <Reveal>
             <Kicker>Poreklo</Kicker>
             <h2 className="mt-4 font-display font-black text-pine-900 tracking-tight text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.06]">
-              Supstrat sa <em className="italic text-rasp-600">poznatim poreklom</em>
+              INSA REMMY supstrat sa <em className="italic text-rasp-600">poznatim poreklom</em>
             </h2>
             <p className="mt-5 text-[16px] leading-relaxed text-ink/75">
-              INSA supstrat nije nepoznata roba — proizvodi ga {SUBSTRATE_ORIGIN.manufacturer},
+              INSA REMMY supstrat nije nepoznata roba — proizvodi ga {SUBSTRATE_ORIGIN.manufacturer},
               porodična kompanija aktivna od {SUBSTRATE_ORIGIN.since}. godine, specijalizovana
               isključivo za preradu kokosovih vlakana u profesionalne supstrate za povrtarsku i
               voćarsku proizvodnju.
@@ -148,7 +147,7 @@ function Comparison() {
             <div className="grid grid-cols-[1.4fr_1fr_1fr] bg-pine-950/60 font-mono text-[11px] uppercase tracking-[0.16em]">
               <div className="px-5 py-4 text-sage-300">Karakteristika</div>
               <div className="px-5 py-4 text-honey-300 flex items-center gap-2">
-                <Icons.berry className="w-4 h-4" /> Kokosov supstrat
+                <Icons.berry className="w-4 h-4" /> INSA REMMY supstrat
               </div>
               <div className="px-5 py-4 text-sage-300">Treset</div>
             </div>
@@ -242,38 +241,6 @@ function Sizes() {
   );
 }
 
-function Uses() {
-  return (
-    <section className="bg-paper border-y border-pine-800/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20">
-        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 items-center">
-          <Reveal>
-            <Kicker>Primena</Kicker>
-            <h2 className="mt-4 font-display font-black text-pine-900 tracking-tight text-[clamp(1.7rem,3vw,2.5rem)] leading-[1.08]">
-              Jedna sredina, više kultura
-            </h2>
-          </Reveal>
-          <div className="flex flex-wrap gap-3">
-            {USES.map((u, i) => {
-              const Ic = useIcon[u.icon] ?? Icons.leaf;
-              return (
-                <Reveal key={u.label} delay={i * 80}>
-                  <span className="group flex items-center gap-3 bg-cream border border-pine-800/12 px-5 py-3.5 font-display font-bold text-[18px] text-pine-900 hover:border-rasp-500/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                    <span className="text-moss-500 group-hover:text-rasp-500 transition-colors">
-                      <Ic className="w-5.5 h-5.5" />
-                    </span>
-                    {u.label}
-                  </span>
-                </Reveal>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 const CROP_GROUPS: CropGroup[] = ["Bobičasto voće", "Povrće", "Ostalo"];
 
 function PogodneKulture() {
@@ -285,8 +252,8 @@ function PogodneKulture() {
           Mešavina za <em className="italic text-rasp-600">svaku kulturu</em>
         </h2>
         <p className="mt-5 text-[16px] leading-relaxed text-ink/75">
-          INSA REMMY supstrat je prilagođen potrebama svake kulture — pronađite
-          mešavinu za svoju.
+          INSA REMMY supstrat je prilagođen potrebama svake kulture — kliknite
+          na kulturu da pročitate preporučenu mešavinu i specifikaciju.
         </p>
       </Reveal>
 
@@ -303,12 +270,13 @@ function PogodneKulture() {
                   <Reveal key={c.slug} delay={gi * 80 + i * 60}>
                     <Link
                       to={c.to}
-                      className="group flex items-center gap-3 bg-cream border border-pine-800/12 px-5 py-3.5 font-display font-bold text-[18px] text-pine-900 hover:border-rasp-500/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                      className="group flex items-center gap-3 bg-cream border border-pine-800/12 pl-5 pr-4 py-3.5 font-display font-bold text-[18px] text-pine-900 hover:border-rasp-500/50 hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:scale-[0.97] active:shadow-none transition-all duration-200 ease-out"
                     >
                       <span className="text-moss-500 group-hover:text-rasp-500 transition-colors">
                         <Ic className="w-5.5 h-5.5" />
                       </span>
                       {c.name}
+                      <Icons.chevron className="w-4 h-4 -rotate-90 text-pine-800/25 group-hover:text-rasp-500 group-hover:translate-x-1 transition-all duration-200" />
                     </Link>
                   </Reveal>
                 );
@@ -379,7 +347,7 @@ function Faq() {
         <Reveal>
           <Kicker>Pitanja i odgovori</Kicker>
           <h2 className="mt-4 font-display font-black text-pine-900 tracking-tight text-[clamp(1.9rem,3.6vw,2.8rem)]">
-            Najčešća pitanja o supstratu
+            Najčešća pitanja o INSA REMMY supstratu
           </h2>
         </Reveal>
         <div className="mt-10 divide-y divide-pine-800/12 border-y border-pine-800/12">
@@ -429,16 +397,16 @@ export default function Supstrat() {
   return (
     <>
       <PageHero
-        kicker="Premium kokosov supstrat"
+        kicker="INSA REMMY — premium kokosov supstrat"
         title={
           <>
             Stabilna sredina za vaš zasad —{" "}
             <em className="italic text-rasp-600">od prvog dana.</em>
           </>
         }
-        text="100% kokosov supstrat bez treseta, 2× ispran i puferisan — sa stabilnim pH i EC od prvog dana. Prilagođen klimi Srbije: podnosi visoke letnje temperature i sušne periode."
-        img={IMG.coirBags}
-        alt="Profesionalne vreće kokosovog supstrata različitih veličina"
+        text="100% INSA REMMY kokosov supstrat bez treseta, 2× ispran i puferisan — sa stabilnim pH i EC od prvog dana. Prilagođen klimi Srbije: podnosi visoke letnje temperature i sušne periode."
+        img={IMG.remmyLineup}
+        alt="Svih 8 pakovanja INSA REMMY Activ+ Coconut Coir supstrata, od 1.5 L do 75-80 L"
         note="8 dimenzija · 1.5–80 L"
         chips={[
           { icon: <Icons.flask className="w-4 h-4 text-moss-500" />, label: "pH 5.5–6.5" },
@@ -456,13 +424,12 @@ export default function Supstrat() {
         </a>
       </PageHero>
 
-      <SpecTable />
+      <PogodneKulture />
+      <Sizes />
       <Origin />
       <Comparison />
-      <Sizes />
-      <Uses />
-      <PogodneKulture />
       <Climate />
+      <SpecTable />
       <Faq />
       <FinalCTA idPrefix="supstrat" />
     </>

@@ -108,12 +108,13 @@ export default function CropDetailPage() {
               <Reveal key={c.slug} delay={i * 50}>
                 <Link
                   to={c.to}
-                  className="group flex items-center gap-3 bg-cream border border-pine-800/12 px-5 py-3.5 font-display font-bold text-[16px] text-pine-900 hover:border-rasp-500/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                  className="group flex items-center gap-3 bg-cream border border-pine-800/12 pl-5 pr-4 py-3.5 font-display font-bold text-[16px] text-pine-900 hover:border-rasp-500/50 hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:scale-[0.97] active:shadow-none transition-all duration-200 ease-out"
                 >
                   <span className="text-moss-500 group-hover:text-rasp-500 transition-colors">
                     <Ic className="w-5 h-5" />
                   </span>
                   {c.name}
+                  <Icons.chevron className="w-4 h-4 -rotate-90 text-pine-800/25 group-hover:text-rasp-500 group-hover:translate-x-1 transition-all duration-200" />
                 </Link>
               </Reveal>
             );

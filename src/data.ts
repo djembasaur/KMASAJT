@@ -36,7 +36,7 @@ export const CONTACT = {
 export const NAV = [
   { to: "/", label: "Početna" },
   { to: "/supstrat", label: "Supstrat" },
-  { to: "/sadnice", label: "Sadnice maline" },
+  { to: "/sadnice", label: "Sadnice" },
   { to: "/subvencije", label: "Subvencije" },
   { to: "/o-nama", label: "O nama" },
   { to: "/baza-znanja", label: "Baza znanja" },

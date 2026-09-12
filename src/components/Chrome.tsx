@@ -57,16 +57,16 @@ export function Header({ route }: { route: Route }) {
             <Logo />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1" aria-label="Glavna navigacija">
+          <nav className="hidden xl:flex items-center gap-0.5" aria-label="Glavna navigacija">
             {NAV.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
-                className={`relative px-3.5 py-2 text-[14.5px] font-medium transition-colors duration-200 ${
+                className={`relative whitespace-nowrap px-2.5 py-2 text-[14px] font-medium transition-colors duration-200 ${
                   route === n.to
                     ? "text-rasp-600"
                     : "text-pine-900 hover:text-rasp-600"
-                } after:absolute after:left-3.5 after:right-3.5 after:-bottom-0.5 after:h-[2px] after:origin-left after:transition-transform after:duration-300 ${
+                } after:absolute after:left-2.5 after:right-2.5 after:-bottom-0.5 after:h-[2px] after:origin-left after:transition-transform after:duration-300 ${
                   route === n.to ? "after:bg-rasp-500 after:scale-x-100" : "after:bg-rasp-500/60 after:scale-x-0 hover:after:scale-x-100"
                 }`}
               >
@@ -75,12 +75,12 @@ export function Header({ route }: { route: Route }) {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             <a
               href={CONTACT.phoneHref}
-              className="flex items-center gap-2 font-mono text-sm font-medium text-pine-900 hover:text-rasp-600 transition-colors"
+              className="flex items-center gap-2 whitespace-nowrap font-mono text-sm font-medium text-pine-900 hover:text-rasp-600 transition-colors"
             >
-              <Icons.phone className="w-4 h-4 text-moss-500" />
+              <Icons.phone className="w-4 h-4 text-moss-500 shrink-0" />
               {CONTACT.phone}
             </a>
             <CTA id="cta-header" href="/kontakt" size="md">
@@ -89,7 +89,7 @@ export function Header({ route }: { route: Route }) {
           </div>
 
           <button
-            className="lg:hidden btn btn-ghost px-3 py-2.5"
+            className="xl:hidden btn btn-ghost px-3 py-2.5"
             onClick={() => setOpen(!open)}
             aria-label={open ? "Zatvori meni" : "Otvori meni"}
             aria-expanded={open}
@@ -101,7 +101,7 @@ export function Header({ route }: { route: Route }) {
 
       {/* Mobilni meni — preko celog ekrana */}
       <div
-        className={`fixed inset-0 z-50 lg:hidden transition-all duration-400 ${
+        className={`fixed inset-0 z-50 xl:hidden transition-all duration-400 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         aria-hidden={!open}
@@ -301,7 +301,7 @@ export function FloatCTA({ route }: { route: Route }) {
 
   return (
     <div
-      className={`fixed bottom-0 inset-x-0 z-40 lg:hidden transition-transform duration-500 ${
+      className={`fixed bottom-0 inset-x-0 z-40 xl:hidden transition-transform duration-500 ${
         show ? "translate-y-0" : "translate-y-full"
       }`}
     >

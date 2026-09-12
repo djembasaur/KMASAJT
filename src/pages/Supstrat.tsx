@@ -272,7 +272,10 @@ function PogodneKulture() {
                       to={c.to}
                       className="group flex items-center gap-3 bg-cream border border-pine-800/12 pl-5 pr-4 py-3.5 font-display font-bold text-[18px] text-pine-900 hover:border-rasp-500/50 hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:scale-[0.97] active:shadow-none transition-all duration-200 ease-out"
                     >
-                      <span className="text-moss-500 group-hover:text-rasp-500 transition-colors">
+                      <span
+                        className="text-moss-500 group-hover:text-rasp-500 transition-colors animate-icon-breathe group-hover:[animation-play-state:paused]"
+                        style={{ animationDelay: `${i * 220}ms` }}
+                      >
                         <Ic className="w-5.5 h-5.5" />
                       </span>
                       {c.name}

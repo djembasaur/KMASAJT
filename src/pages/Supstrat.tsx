@@ -15,14 +15,6 @@ import { Link } from "../lib/router";
 import PageHero from "../components/PageHero";
 import { FinalCTA } from "./Home";
 
-const useIcon: Record<string, (p: { className?: string }) => React.ReactElement> = {
-  berry: Icons.berry,
-  drop: Icons.drop,
-  leaf: Icons.leaf,
-  sun: Icons.sun,
-  flower: Icons.flower,
-};
-
 function SpecTable() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-24 grid lg:grid-cols-[1fr_1.4fr] gap-12">
@@ -257,33 +249,36 @@ function PogodneKulture() {
         </p>
       </Reveal>
 
-      <div className="mt-12 space-y-10">
+      <div className="mt-12 space-y-12">
         {CROP_GROUPS.map((group, gi) => (
           <div key={group}>
             <Reveal delay={gi * 80}>
-              <Kicker className="mb-4">{group}</Kicker>
+              <Kicker className="mb-5">{group}</Kicker>
             </Reveal>
-            <div className="flex flex-wrap gap-3">
-              {CROPS.filter((c) => c.group === group).map((c, i) => {
-                const Ic = useIcon[c.icon] ?? Icons.leaf;
-                return (
-                  <Reveal key={c.slug} delay={gi * 80 + i * 60}>
-                    <Link
-                      to={c.to}
-                      className="group flex items-center gap-3 bg-cream border border-pine-800/12 pl-5 pr-4 py-3.5 font-display font-bold text-[18px] text-pine-900 hover:border-rasp-500/50 hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:scale-[0.97] active:shadow-none transition-all duration-200 ease-out"
-                    >
-                      <span
-                        className="text-moss-500 group-hover:text-rasp-500 transition-colors animate-icon-breathe group-hover:[animation-play-state:paused]"
-                        style={{ animationDelay: `${i * 220}ms` }}
-                      >
-                        <Ic className="w-5.5 h-5.5" />
-                      </span>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {CROPS.filter((c) => c.group === group).map((c, i) => (
+                <Reveal key={c.slug} delay={gi * 80 + i * 60}>
+                  <Link
+                    to={c.to}
+                    className="group flex flex-col items-center bg-cream border border-pine-800/12 p-4 hover:border-rasp-500/50 hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:scale-[0.97] active:shadow-none transition-all duration-200 ease-out"
+                  >
+                    <span className="flex items-center gap-1.5 font-display font-bold text-[17px] text-pine-900 group-hover:text-rasp-600 transition-colors">
                       {c.name}
-                      <Icons.chevron className="w-4 h-4 -rotate-90 text-pine-800/25 group-hover:text-rasp-500 group-hover:translate-x-1 transition-all duration-200" />
-                    </Link>
-                  </Reveal>
-                );
-              })}
+                      <Icons.chevron className="w-3.5 h-3.5 -rotate-90 text-pine-800/25 group-hover:text-rasp-500 group-hover:translate-x-1 transition-all duration-200" />
+                    </span>
+                    <div className="mt-3 h-48 sm:h-56 w-full flex items-end justify-center">
+                      <div className="bag-shake" style={{ transformOrigin: "bottom center" }}>
+                        <img
+                          src={c.img}
+                          alt={`INSA REMMY vreća supstrata sa ${c.nameAcc}`}
+                          loading="lazy"
+                          className="max-h-48 sm:max-h-56 w-auto object-contain"
+                        />
+                      </div>
+                    </div>
+                  </Link>
+                </Reveal>
+              ))}
             </div>
           </div>
         ))}

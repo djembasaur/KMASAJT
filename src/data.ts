@@ -114,8 +114,8 @@ export const OFFERS: {
       "Osam veličina vreća, od 1.5 L do 80 L",
       "Za maline, borovnice, jagode, povrće i cveće",
     ],
-    img: IMG.coirBags,
-    alt: "Profesionalne vreće kokosovog supstrata različitih veličina",
+    img: IMG.remmyLineup,
+    alt: "INSA REMMY kokosov supstrat u svih osam veličina pakovanja",
   },
   {
     id: "podrska",
@@ -628,27 +628,6 @@ export const SUBSIDY_ELIGIBILITY = [
     t: "Minimalan prijem sadnica",
     d: "Najmanje 90% posađenih sadnica mora biti primljeno (prihvaćeno) prilikom terenske provere.",
   },
-] as const;
-
-export const SUBSIDY_ELIGIBLE_COSTS = [
-  { kultura: "Malina — dvorodne sorte", gustina: "6.500–25.000 sadnica/ha", trosak: "120 din / sadnici" },
-  { kultura: "Malina — jednorodne sorte", gustina: "10.000–25.000 sadnica/ha", trosak: "210 din / sadnici" },
-  { kultura: "Kupina", gustina: "2.000–10.000 sadnica/ha", trosak: "180 din / sadnici" },
-  { kultura: "Borovnica, klasičan uzgoj", gustina: "2.200–4.500 sadnica/ha", trosak: "500 din / sadnici" },
-  { kultura: "Jagoda", gustina: "40.000–65.000 sadnica/ha", trosak: "35 din / sadnici" },
-  {
-    kultura: "Malina u saksijama/vrećama sa supstratom",
-    gustina: "10.000–25.000 sadnica/ha",
-    trosak: "300 din / sadnici",
-    highlight: true,
-  },
-  {
-    kultura: "Borovnica u saksijama/vrećama sa supstratom",
-    gustina: "4.100–5.600 sadnica/ha",
-    trosak: "1.400 din / sadnici",
-    highlight: true,
-  },
-  { kultura: "Jagoda u saksijama/vrećama sa supstratom", gustina: "65.000–180.000 sadnica/ha", trosak: "180 din / sadnici" },
 ] as const;
 
 export const SUBSIDY_MAX_AMOUNTS = [

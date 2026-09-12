@@ -4,7 +4,6 @@ import {
   IMG,
   SUBSIDY_DOCS,
   SUBSIDY_ELIGIBILITY,
-  SUBSIDY_ELIGIBLE_COSTS,
   SUBSIDY_MAX_AMOUNTS,
   SUBSIDY_STEPS,
   SUBVENCIJE_FAQ,
@@ -114,43 +113,7 @@ function Amounts() {
           </p>
         </Reveal>
 
-        <Reveal delay={120} className="mt-10">
-          <h3 className="font-display font-bold text-pine-900 text-[19px]">
-            Prihvatljivi troškovi po sadnici (Prilog 2 pravilnika)
-          </h3>
-          <p className="mt-2 text-[14px] text-ink/60">
-            Poslednje dve stavke — sadnice u saksijama/vrećama sa supstratom — su tačna
-            kombinacija koju nudi INSA KMA Fields.
-          </p>
-          <div className="mt-5 overflow-x-auto bg-white border border-pine-800/12">
-            <table className="w-full text-left border-collapse min-w-[560px]">
-              <thead>
-                <tr className="border-b border-pine-800/15">
-                  <th className="py-3 px-4 font-mono text-[10.5px] uppercase tracking-[0.14em] text-moss-500">
-                    Kultura
-                  </th>
-                  <th className="py-3 px-4 font-mono text-[10.5px] uppercase tracking-[0.14em] text-moss-500">
-                    Gustina sadnje
-                  </th>
-                  <th className="py-3 px-4 font-mono text-[10.5px] uppercase tracking-[0.14em] text-moss-500">
-                    Prihvatljiv trošak
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-pine-800/10">
-                {SUBSIDY_ELIGIBLE_COSTS.map((r) => (
-                  <tr key={r.kultura} className={"highlight" in r && r.highlight ? "bg-honey-100" : ""}>
-                    <td className="py-3 px-4 text-[14px] font-medium text-pine-900">{r.kultura}</td>
-                    <td className="py-3 px-4 text-[13.5px] text-ink/72">{r.gustina}</td>
-                    <td className="py-3 px-4 text-[14px] font-semibold text-rasp-600">{r.trosak}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </Reveal>
-
-        <Reveal delay={160} className="mt-14">
+        <Reveal delay={160} className="mt-10">
           <h3 className="font-display font-bold text-pine-900 text-[19px]">
             Maksimalni iznosi po korisniku — ažurirano za 2026.
           </h3>

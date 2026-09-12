@@ -27,6 +27,7 @@ const ROUTES = [
   "/supstrat/borovnica",
   "/supstrat/ruza",
   "/sadnice",
+  "/subvencije",
   "/o-nama",
   "/baza-znanja",
   "/kontakt",

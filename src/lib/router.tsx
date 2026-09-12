@@ -24,6 +24,7 @@ export type Route =
   | "/supstrat/borovnica"
   | "/supstrat/ruza"
   | "/sadnice"
+  | "/subvencije"
   | "/o-nama"
   | "/baza-znanja"
   | "/kontakt";
@@ -41,6 +42,7 @@ export const ROUTES: Route[] = [
   "/supstrat/borovnica",
   "/supstrat/ruza",
   "/sadnice",
+  "/subvencije",
   "/o-nama",
   "/baza-znanja",
   "/kontakt",

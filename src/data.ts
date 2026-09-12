@@ -25,7 +25,7 @@ export const IMG = {
 
 export const CONTACT = {
   person: "Sandra Ćapin",
-  initials: "SČ",
+  initials: "SĆ",
   phone: "064 8648 522",
   phoneHref: "tel:+381648648522",
   email: "sandra.capin@insakma.com",
@@ -37,6 +37,7 @@ export const NAV = [
   { to: "/", label: "Početna" },
   { to: "/supstrat", label: "Supstrat" },
   { to: "/sadnice", label: "Sadnice maline" },
+  { to: "/subvencije", label: "Subvencije" },
   { to: "/o-nama", label: "O nama" },
   { to: "/baza-znanja", label: "Baza znanja" },
   { to: "/kontakt", label: "Kontakt" },
@@ -581,3 +582,154 @@ export const ARTICLES: Article[] = [
     ],
   },
 ];
+
+/* ─────────────────────────────────────────────────────────────
+   Stranica /subvencije — sadržaj zasnovan na Pravilniku o
+   podsticajima za investicije u fizičku imovinu poljoprivrednog
+   gazdinstva kroz podršku podizanja višegodišnjih proizvodnih
+   zasada voćaka i hmelja ("Sl. glasnik RS" 58/2023, izmenjen i
+   dopunjen "Sl. glasnikom RS" 121/2025 od 31.12.2025 — izmene na
+   snazi za sezonu 2026).
+   ───────────────────────────────────────────────────────────── */
+
+export const SUBSIDY_ELIGIBILITY = [
+  {
+    icon: "shield",
+    t: "Nosilac RPG-a, preduzetnik ili pravno lice",
+    d: "Pravo imaju fizička lica — nosioci komercijalnog porodičnog poljoprivrednog gazdinstva, preduzetnici, kao i pravna lica (privredna društva, zadruge, zadužbine, škole, naučnoistraživačke organizacije, manastiri i crkve).",
+  },
+  {
+    icon: "doc",
+    t: "Aktivna registracija u RPG",
+    d: "Gazdinstvo mora biti upisano u Registar poljoprivrednih gazdinstava i imati obnovljenu registraciju za tekuću godinu.",
+  },
+  {
+    icon: "check",
+    t: "Izmirene obaveze",
+    d: "Bez neizmirenih dugovanja prema Ministarstvu poljoprivrede po osnovu ranijih podsticaja, subvencija ili kredita, uz izmirene obaveze po osnovu javnih prihoda.",
+  },
+  {
+    icon: "globe",
+    t: "Nepovezan dobavljač",
+    d: "Dobavljač sadnica i podnosilac zahteva ne smeju biti povezana lica.",
+  },
+  {
+    icon: "leaf",
+    t: "Površina zasada u propisanim granicama",
+    d: "0,1–5 ha za jagodasto voće (malina, kupina, borovnica, jagoda) i 0,2–10 ha za drvenaste vrste voćaka.",
+  },
+  {
+    icon: "chart",
+    t: "Gustina sadnje po tablici pravilnika",
+    d: "Gustina mora odgovarati propisanim opsezima — npr. za malinu 6.500–25.000 sadnica po hektaru, zavisno od sorte.",
+  },
+  {
+    icon: "berry",
+    t: "Minimalan prijem sadnica",
+    d: "Najmanje 90% posađenih sadnica mora biti primljeno (prihvaćeno) prilikom terenske provere.",
+  },
+] as const;
+
+export const SUBSIDY_ELIGIBLE_COSTS = [
+  { kultura: "Malina — dvorodne sorte", gustina: "6.500–25.000 sadnica/ha", trosak: "120 din / sadnici" },
+  { kultura: "Malina — jednorodne sorte", gustina: "10.000–25.000 sadnica/ha", trosak: "210 din / sadnici" },
+  { kultura: "Kupina", gustina: "2.000–10.000 sadnica/ha", trosak: "180 din / sadnici" },
+  { kultura: "Borovnica, klasičan uzgoj", gustina: "2.200–4.500 sadnica/ha", trosak: "500 din / sadnici" },
+  { kultura: "Jagoda", gustina: "40.000–65.000 sadnica/ha", trosak: "35 din / sadnici" },
+  {
+    kultura: "Malina u saksijama/vrećama sa supstratom",
+    gustina: "10.000–25.000 sadnica/ha",
+    trosak: "300 din / sadnici",
+    highlight: true,
+  },
+  {
+    kultura: "Borovnica u saksijama/vrećama sa supstratom",
+    gustina: "4.100–5.600 sadnica/ha",
+    trosak: "1.400 din / sadnici",
+    highlight: true,
+  },
+  { kultura: "Jagoda u saksijama/vrećama sa supstratom", gustina: "65.000–180.000 sadnica/ha", trosak: "180 din / sadnici" },
+] as const;
+
+export const SUBSIDY_MAX_AMOUNTS = [
+  { k: "Nabavka sadnica voćaka i hmelja", old: "2.500.000", new: "3.500.000" },
+  { k: "Nabavka naslona", old: "825.000", new: "1.000.000" },
+  { k: "Priprema zemljišta / supstrat sa sertifikatom", old: "375.000", new: "400.000" },
+  { k: "Analiza zemljišta", old: "100.000", new: "100.000" },
+  { k: "Ukupno po korisniku godišnje", old: "3.000.000", new: "5.000.000" },
+] as const;
+
+export const SUBSIDY_STEPS = [
+  {
+    no: "01",
+    title: "Registracija/obnova u eRPG",
+    text: "Ako gazdinstvo još nije registrovano ili nije obnovljeno za tekuću godinu, prvi korak je registracija preko portala eAgrar (erpg.eagrar.gov.rs) — potrebna je eID identifikacija (ConsentID aplikacija ili kvalifikovani elektronski sertifikat).",
+  },
+  {
+    no: "02",
+    title: "Kupovina sertifikovanog sadnog materijala",
+    text: "Nabavite sadnice — i, ako je primenljivo, supstrat sa sertifikatom — od dobavljača koji nije povezano lice sa vama, uz urednu fakturu ili e-fakturu sa jasno iskazanom cenom i PDV-om.",
+  },
+  {
+    no: "03",
+    title: "Priprema dokumentacije",
+    text: "Računi, dokaz o plaćanju, katastarski plan, ugovor o zakupu ako je primenljivo i sertifikat supstrata ako je primenljivo — sve se prilaže elektronski, kroz eAgrar.",
+  },
+  {
+    no: "04",
+    title: "Praćenje kalendara javnih poziva",
+    text: "Ministarstvo poljoprivrede objavljuje godišnji kalendar podsticaja unapred; poziv za podizanje višegodišnjih zasada voća se tipično raspisuje u jesenjem periodu. Za 2026. godinu postoji poseban izuzetak koji dozvoljava prijavu i za investicije iz 2024/2025.",
+  },
+  {
+    no: "05",
+    title: "Podnošenje elektronskog zahteva",
+    text: "Kompletan obrazac i sva dokumentacija podnose se online, preko softverskog rešenja eAgrar/ePodsticaji, potpisano kvalifikovanom elektronskom identifikacijom.",
+  },
+  {
+    no: "06",
+    title: "Administrativna i terenska provera",
+    text: "Uprava za agrarna plaćanja proverava zahtev, a nadležni inspektor izlazi na teren da pregleda zasad, gustinu sadnje i broj primljenih sadnica pre donošenja rešenja.",
+  },
+  {
+    no: "07",
+    title: "Isplata na namenski račun",
+    text: "Ako je zahtev odobren, sredstva se isplaćuju na namenski poljoprivredni račun prijavljen u Registru.",
+  },
+] as const;
+
+export const SUBSIDY_DOCS = [
+  "Račun ili e-faktura na ime podnosioca — sa jasno iskazanom jediničnom i osnovnom cenom, PDV-om i ukupnom cenom",
+  "Otpremnica (ili međunarodni tovarni list ako su sadnice uvezene direktno)",
+  "Dokaz o izvršenom plaćanju — izvod banke, SWIFT potvrda za uvoz ili fiskalni isečak",
+  "Kopija plana katastarske parcele (razmera 1:1.000 do 1:2.880)",
+  "Ugovor o zakupu/korišćenju zemljišta ako niste vlasnik (min. 7 godina za voćke, min. 2 godine za jagodu)",
+  "Za pravna lica i preduzetnike: potvrde iz APR-a (bez zabrane obavljanja delatnosti, privrednog prestupa, likvidacije ili stečaja)",
+  "Za zasade sa supstratom u saksijama/vrećama: sertifikat supstrata je obavezan uslov",
+] as const;
+
+export const SUBVENCIJE_FAQ = [
+  {
+    q: "Da li subvencija pokriva i kokosov supstrat?",
+    a: "Da — za proizvodne zasade borovnice i/ili maline sa sadnicama u saksijama/vrećama sa supstratom, nabavka supstrata sa sertifikatom je prihvatljiv trošak. Prihvatljiv trošak iznosi do 300 dinara po sadnici za malinu i do 1.400 dinara po sadnici za borovnicu.",
+  },
+  {
+    q: "Da li moram već da imam RPG da bih kupio sadnice?",
+    a: "Ne za samu kupovinu, ali da za ostvarivanje prava na subvenciju — gazdinstvo mora biti upisano u Registar poljoprivrednih gazdinstava i u aktivnom statusu.",
+  },
+  {
+    q: "Da li mogu da se prijavim za subvenciju za zasad koji sam podigao pre raspisivanja poziva za 2026?",
+    a: "Da — prema izuzetku u izmeni pravilnika za 2026. godinu, investicije i zasadi iz perioda 2024–2025. mogu biti prihvatljivi. Detalje proveravamo zajedno prema vašem konkretnom slučaju.",
+  },
+  {
+    q: "Ko dolazi na teren da proveri zasad?",
+    a: "Nadležni poljoprivredni inspektor — administrativna provera zahteva prethodi terenskoj proveri gustine sadnje i broja primljenih sadnica.",
+  },
+  {
+    q: "Koliko traje ceo proces?",
+    a: "Od registracije do isplate prođe po pravilu nekoliko meseci — tačni rokovi zavise od godišnjeg kalendara javnih poziva, pa ne obećavamo fiksne termine koji se menjaju iz godine u godinu.",
+  },
+  {
+    q: "Da li INSA KMA Fields garantuje da ću dobiti subvenciju?",
+    a: "Ne — odluku donosi Uprava za agrarna plaćanja na osnovu administrativne i terenske provere. Mi pomažemo sa dokumentacijom, sertifikatom supstrata i savetima, ali odobrenje nije u našoj nadležnosti.",
+  },
+] as const;

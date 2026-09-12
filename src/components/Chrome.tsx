@@ -230,7 +230,7 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/baza-znanja" className="text-sage-300 hover:text-honey-300 transition-colors">
+              <Link to="/subvencije" className="text-sage-300 hover:text-honey-300 transition-colors">
                 Subvencije 40–70%
               </Link>
             </li>

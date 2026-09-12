@@ -1,5 +1,5 @@
 import React from "react";
-import { CONTACT, IMG } from "../data";
+import { CONTACT, IMG, PRESS } from "../data";
 import { CTA, Icons, Kicker, Reveal } from "../lib/ui";
 import { Link } from "../lib/router";
 import PageHero from "../components/PageHero";
@@ -165,6 +165,52 @@ function Principles() {
   );
 }
 
+function Press() {
+  return (
+    <section className="bg-paper border-y border-pine-800/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-24">
+        <Reveal className="max-w-2xl">
+          <Kicker>Mediji o nama</Kicker>
+          <h2 className="mt-4 font-display font-black text-pine-900 tracking-tight text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.06]">
+            Pišu i pričaju o nama
+          </h2>
+          <p className="mt-5 text-[16px] leading-relaxed text-ink/75">
+            Nezavisna poljoprivredna redakcija Zelena Nit pratila je našu priču i rad
+            proizvođača koji koriste naše sadnice i supstrat.
+          </p>
+        </Reveal>
+        <div className="mt-12 grid md:grid-cols-3 gap-6">
+          {PRESS.map((p, i) => (
+            <Reveal key={p.url} delay={i * 100}>
+              <a
+                href={p.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex h-full flex-col bg-white border border-pine-800/12 p-6 sm:p-7 transition-all duration-300 hover:border-rasp-500/50 hover:-translate-y-1 hover:shadow-[0_24px_48px_-30px_rgba(12,26,18,0.35)]"
+              >
+                <div className="flex items-center justify-between gap-4">
+                  <span className="font-mono text-[10.5px] uppercase tracking-[0.16em] text-moss-500">
+                    {p.outlet}
+                  </span>
+                  <span className="font-mono text-[11px] text-ink/45">{p.date}</span>
+                </div>
+                <h3 className="mt-4 font-display font-bold text-[18.5px] leading-snug text-pine-900 group-hover:text-rasp-600 transition-colors flex-1">
+                  {p.title}
+                </h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-ink/70">{p.excerpt}</p>
+                <span className="mt-5 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-rasp-600">
+                  Pročitajte članak
+                  <Icons.arrow className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+              </a>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ContactPerson() {
   return (
     <section className="bg-paper border-y border-pine-800/10">
@@ -234,6 +280,7 @@ export default function ONama() {
       <Story />
       <Pillars />
       <Principles />
+      <Press />
       <ContactPerson />
       <FinalCTA idPrefix="o-nama" />
     </>

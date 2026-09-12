@@ -453,6 +453,33 @@ export const SADNICE_FAQ = [
   },
 ];
 
+export const PRESS = [
+  {
+    outlet: "Zelena Nit",
+    date: "24.08.2026",
+    title: "Kako su „Grci iz plastenika” pronašli svog seoskog popa",
+    excerpt:
+      "Priča o proizvođačima maline u srpskom selu i njihovom putu do kvalitetnog sadnog materijala i podrške zajednice.",
+    url: "https://zelenanit.rs/maline-proizvodnja-sadnice/",
+  },
+  {
+    outlet: "Zelena Nit",
+    date: "07.08.2026",
+    title: "Profesionalna proizvodnja maline počinje od dobrog sadnog materijala",
+    excerpt:
+      "Zašto sve veći broj proizvođača bira sertifikovane sadnice i profesionalan kokosov supstrat za intenzivnu proizvodnju.",
+    url: "https://zelenanit.rs/sertifikovane-sadnice-maline-kokosov-supstrat/",
+  },
+  {
+    outlet: "Zelena Nit",
+    date: "01.09.2026",
+    title: "Kokosov supstrat i uvozne sadnice maline — nova generacija proizvodnje stiže u Srbiju",
+    excerpt:
+      "Pregled trenda koji menja proizvodnju maline u Srbiji: EU-sertifikovane sadnice i kokosov supstrat umesto treseta.",
+    url: "https://zelenanit.rs/kokosov-supstrat-malina/",
+  },
+] as const;
+
 export const KONTAKT_FAQ = [
   {
     q: "Kako najbrže dobijam ponudu?",

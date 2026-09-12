@@ -14,6 +14,15 @@ declare global {
 export type Route =
   | "/"
   | "/supstrat"
+  | "/supstrat/paradajz"
+  | "/supstrat/krastavac"
+  | "/supstrat/paprika"
+  | "/supstrat/plavi-patlidzan"
+  | "/supstrat/jagoda"
+  | "/supstrat/malina"
+  | "/supstrat/kupina"
+  | "/supstrat/borovnica"
+  | "/supstrat/ruza"
   | "/sadnice"
   | "/o-nama"
   | "/baza-znanja"
@@ -22,6 +31,15 @@ export type Route =
 export const ROUTES: Route[] = [
   "/",
   "/supstrat",
+  "/supstrat/paradajz",
+  "/supstrat/krastavac",
+  "/supstrat/paprika",
+  "/supstrat/plavi-patlidzan",
+  "/supstrat/jagoda",
+  "/supstrat/malina",
+  "/supstrat/kupina",
+  "/supstrat/borovnica",
+  "/supstrat/ruza",
   "/sadnice",
   "/o-nama",
   "/baza-znanja",

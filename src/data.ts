@@ -23,7 +23,7 @@ export const IMG = {
 } as const;
 
 export const CONTACT = {
-  person: "Sandra Čapin",
+  person: "Sandra Ćapin",
   initials: "SČ",
   phone: "064 8648 522",
   phoneHref: "tel:+381648648522",
@@ -34,7 +34,7 @@ export const CONTACT = {
 
 export const NAV = [
   { to: "/", label: "Početna" },
-  { to: "/supstrat", label: "Kokosov supstrat" },
+  { to: "/supstrat", label: "Supstrat" },
   { to: "/sadnice", label: "Sadnice maline" },
   { to: "/o-nama", label: "O nama" },
   { to: "/baza-znanja", label: "Baza znanja" },
@@ -253,6 +253,158 @@ export const USES = [
   { icon: "leaf", label: "Jagode" },
   { icon: "sun", label: "Povrće" },
   { icon: "flower", label: "Cveće" },
+];
+
+export type CropGroup = "Bobičasto voće" | "Povrće" | "Ostalo";
+
+export type Crop = {
+  slug: string;
+  to: Route;
+  name: string;
+  nameAcc: string;
+  group: CropGroup;
+  icon: "berry" | "drop" | "leaf" | "sun" | "flower";
+  intro: string;
+  spec: string;
+  metaDescription: string;
+  extraCta?: { text: string; to: Route; label: string };
+  extraNote?: string;
+};
+
+export const CROPS: Crop[] = [
+  {
+    slug: "jagoda",
+    to: "/supstrat/jagoda",
+    name: "Jagoda",
+    nameAcc: "jagodu",
+    group: "Bobičasto voće",
+    icon: "berry",
+    intro:
+      "INSA REMMY vreće koriste proizvođači jagoda širom sveta za berbu tokom cele godine. Veliku pažnju posvećujemo kvalitetu ispranog i dodatno ispranog supstrata, što je glavni razlog zašto naš supstrat daje jagode vrhunskog kvaliteta. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
+    spec:
+      "Za negu korena jagode nudimo dve različite kokosove mešavine sa specifičnim osobinama, prilagođene klimi i potrebama proizvođača. Naša Activ mešavina, sa povećanim kapacitetom zadržavanja vode i nižom provetrenošću, posebno je pogodna za berbu jagoda. Nudimo ispran i dodatno ispran kokos. Za proizvođače kojima je potrebna veća provetrenost, tu je i Activ+ mešavina.",
+    metaDescription:
+      "INSA REMMY supstrat za jagodu — ispran i dodatno ispran kokos, Activ i Activ+ mešavine za berbu tokom cele godine i vrhunski kvalitet ploda.",
+  },
+  {
+    slug: "malina",
+    to: "/supstrat/malina",
+    name: "Malina",
+    nameAcc: "malinu",
+    group: "Bobičasto voće",
+    icon: "berry",
+    intro:
+      "INSA REMMY supstrati koriste se za proizvodnju malina tokom cele godine, bez obzira na klimatske promene. Naše posebne kokosove mešavine osmišljene su baš za maline, sa naglaskom na hidrataciju korena i sposobnost navodnjavanja. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
+    spec:
+      "Za negu korena maline nudimo dve različite kokosove mešavine sa specifičnim osobinama, prilagođene klimi i potrebama proizvođača. Naša Activ mešavina, sa povećanim kapacitetom zadržavanja vode i nižom provetrenošću, posebno je pogodna za berbu malina. Nudimo ispran i dodatno ispran kokos. Za proizvođače kojima je potrebna veća provetrenost, tu je i Activ+ mešavina.",
+    metaDescription:
+      "INSA REMMY kokosov supstrat za malinu — Activ i Activ+ mešavine za hidrataciju korena i navodnjavanje, za proizvodnju tokom cele godine.",
+    extraCta: {
+      text: "Sadite maline? Pogledajte i naše premium sadnice iz Holandije i Italije.",
+      to: "/sadnice",
+      label: "Sadnice maline",
+    },
+  },
+  {
+    slug: "kupina",
+    to: "/supstrat/kupina",
+    name: "Kupina",
+    nameAcc: "kupinu",
+    group: "Bobičasto voće",
+    icon: "berry",
+    intro:
+      "Naše kokosove mešavine dobro služe proizvođačima kupina jer nude supstrate koji se najbolje prilagođavaju različitim klimatskim uslovima i tradicionalnim načinima gajenja. Supstrati napravljeni od kvalitetnih sirovina pomažu korenu biljke da brzo usvaja hranljive materije. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
+    spec:
+      "Za negu korena kupine nudimo jedinstvenu kokosovu mešavinu sa specifičnim osobinama, prilagođenu klimi i potrebama proizvođača. Naša Activ+ mešavina ima veću provetrenost i nižu sposobnost zadržavanja vode. Nudimo ispran i dodatno ispran kokos. Ova mešavina predstavlja idealan medijum za gajenje kupina zahvaljujući izuzetnoj drenaži i zadržavanju vlage — ključnim za stabilan koren i krupne, sočne plodove.",
+    metaDescription:
+      "INSA REMMY supstrat za kupinu — Activ+ mešavina sa izuzetnom drenažom i zadržavanjem vlage, za stabilan koren i krupne, sočne plodove.",
+  },
+  {
+    slug: "borovnica",
+    to: "/supstrat/borovnica",
+    name: "Borovnica",
+    nameAcc: "borovnicu",
+    group: "Bobičasto voće",
+    icon: "berry",
+    intro:
+      "Godinama isporučujemo vrhunske kokosove mešavine proizvođačima borovnica širom sveta. INSA REMMY mešavine su omiljene među proizvođačima borovnica zbog jedinstvene teksture koja pomaže zdravom rastu biljke. Kako je borovnica dugoročna kultura, razvili smo posebne UV-otporne vreće koje traju do same berbe. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
+    spec:
+      "Borovnicama je potrebna dodatna nega jer su dugoročna kultura, zato nudimo dve mešavine prilagođene klimi i potrebama proizvođača. Prosper mešavina daje biljkama borovnice zdrav i stabilan medijum za rast. Za proizvođače kojima je potrebna veća provetrenost, tu je Prosper+ mešavina. Nudimo ispran i dodatno ispran kokos za vaše zasade borovnice.",
+    metaDescription:
+      "INSA REMMY supstrat za borovnicu — Prosper i Prosper+ mešavine i UV-otporne vreće za dugoročnu proizvodnju, ispran i dodatno ispran kokos.",
+    extraNote:
+      "INSA KMA Fields uskoro nudi i sortu borovnice „Last Call” — pratite našu ponudu za detalje.",
+  },
+  {
+    slug: "paradajz",
+    to: "/supstrat/paradajz",
+    name: "Paradajz",
+    nameAcc: "paradajz",
+    group: "Povrće",
+    icon: "sun",
+    intro:
+      "INSA REMMY kokosov supstrat je odličan medijum za gajenje paradajza. Zahvaljujući sirovinama koje se peru i suše na specijalizovanim mašinama, proizvođači ne moraju da brinu o korovu, insektima i bolestima. Nudimo više formata pakovanja prilagođenih vašem načinu gajenja, a rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
+    spec:
+      "Za paradajz nudimo širok izbor mešavina jedinstvenog sastava. Sve naše mešavine sadrže kombinaciju kokosove prašine (pith), kokosovih čipsova i sečenih vlakana, u odnosu koji se može prilagoditi. Mešavine su osmišljene da zadrže vlagu za koren biljke sve do berbe. Ispran kokos nudimo sa niskom električnom provodljivošću (EC), pogodnom baš za paradajz. Naš tim vam rado savetuje koji format i mešavina najbolje odgovaraju vašem gajenju.",
+    metaDescription:
+      "INSA REMMY kokosov supstrat za paradajz — isprane sirovine, mešavine kokosove prašine, čipsova i vlakana, niska EC. Format po dogovoru.",
+  },
+  {
+    slug: "krastavac",
+    to: "/supstrat/krastavac",
+    name: "Krastavac",
+    nameAcc: "krastavac",
+    group: "Povrće",
+    icon: "drop",
+    intro:
+      "Naši supstrati, napravljeni od kvalitetnih sirovina, dobro se prilagođavaju različitim klimatskim uslovima i načinima gajenja, pomažući biljkama da bujno rastu. INSA REMMY vreće i supstrati pogodni su za sve vrste krastavaca, uključujući salatne i kornišon sorte. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
+    spec:
+      "Za krastavac nudimo širok izbor mešavina jedinstvenog sastava — kombinaciju kokosove prašine, kokosovih čipsova i sečenih vlakana, u odnosu koji se može prilagoditi. Nudimo ispran kokos sa različitim nivoom zadržavanja vode i provetrenosti, kao i niskom električnom provodljivošću (EC). Mešavine su osmišljene da zadrže vlagu za koren biljke sve do berbe. Naš tim vam rado savetuje koji format i mešavina najbolje odgovaraju vašem gajenju.",
+    metaDescription:
+      "INSA REMMY supstrat za sve vrste krastavaca — salatne i kornišone. Kokosova mešavina prilagodljiva klimi i sistemu gajenja, niska EC vrednost.",
+  },
+  {
+    slug: "paprika",
+    to: "/supstrat/paprika",
+    name: "Paprika",
+    nameAcc: "papriku",
+    group: "Povrće",
+    icon: "sun",
+    intro:
+      "Paprika bolje uspeva u drobljenim kokosovim čipsovima i kokosovoj prašini nego u običnoj zemlji. Naši supstrati, napravljeni od kvalitetnih sirovina, dobro se prilagođavaju različitim klimatskim uslovima i načinima gajenja. Pošto se sve sirovine peru i suše na specijalizovanim mašinama, proizvođači ne moraju da brinu o korovu, insektima i bolestima. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
+    spec:
+      "Za papriku nudimo širok izbor mešavina jedinstvenog sastava — kombinaciju kokosove prašine, kokosovih čipsova i sečenih vlakana, u odnosu koji se može prilagoditi. Nudimo ispran kokos sa različitim nivoom zadržavanja vode i provetrenosti, kao i niskom električnom provodljivošću (EC). Mešavine su osmišljene da zadrže vlagu za koren biljke sve do berbe. Naš tim vam rado savetuje koji format i mešavina najbolje odgovaraju vašem gajenju.",
+    metaDescription:
+      "INSA REMMY kokosov supstrat za papriku — isprane sirovine bez korova i bolesti, mešavine prilagodljivog sastava i niske EC vrednosti.",
+  },
+  {
+    slug: "plavi-patlidzan",
+    to: "/supstrat/plavi-patlidzan",
+    name: "Plavi patlidžan",
+    nameAcc: "plavi patlidžan",
+    group: "Povrće",
+    icon: "leaf",
+    intro:
+      "INSA REMMY vreće čine gajenje plavog patlidžana jednostavnim i štite biljku od raznih bolesti. Za razliku od drugih bezemljišnih supstrata, kokosova prašina zadržava visoku provetrenost čak i kad je potpuno zasićena vodom. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
+    spec:
+      "Za plavi patlidžan nudimo širok izbor mešavina jedinstvenog sastava — kombinaciju kokosove prašine, kokosovih čipsova i sečenih vlakana, u odnosu koji se može prilagoditi. Nudimo ispran kokos sa različitim nivoom zadržavanja vode i provetrenosti, kao i niskom električnom provodljivošću (EC). Mešavine su osmišljene da zadrže vlagu za koren biljke sve do berbe. Naš tim vam rado savetuje koji format i mešavina najbolje odgovaraju vašem gajenju.",
+    metaDescription:
+      "INSA REMMY supstrat za plavi patlidžan — kokosova prašina zadržava provetrenost i pri punom zasićenju vodom. Mešavine po vašim potrebama.",
+  },
+  {
+    slug: "ruza",
+    to: "/supstrat/ruza",
+    name: "Ruža",
+    nameAcc: "ružu",
+    group: "Ostalo",
+    icon: "flower",
+    intro:
+      "Razumemo koliko je važno gajiti kvalitetne ruže da bi se bilo konkurentno na globalnom tržištu cveća. Zato nudimo specijalizovane kokosove mešavine kao idealan medijum za rast, sa povećanom provetrenošću. Ovo rastresa supstrat i pojačava provetrenost, što rezultira boljim razvojem korena ruže. Naši supstrati tako dovode do boljeg rasta biljke i većeg prinosa. Pošto je drenaža ključna u gajenju ruža, posebno vodimo računa o pravilnoj drenaži za vaše pupoljke. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
+    spec:
+      "Naše sirovine se peru i suše na savršenoj temperaturi, tako da se proizvođači ruža više ne moraju brinuti o pojavi korova oko leja. Nudimo dve mešavine za optimalan rast cveta. Blossom mešavina je posebno osmišljena za biljke u cvatu i lako se prilagođava izazovima cvećarstva. Za proizvođače kojima je potrebna veća provetrenost, tu je Blossom+ mešavina. Nudimo ispran i dodatno ispran kokos za vaše ruže.",
+    metaDescription:
+      "INSA REMMY supstrat za ružu — Blossom i Blossom+ mešavine za povećanu provetrenost, bolju drenažu i razvoj korena, za veći prinos pupoljaka.",
+  },
 ];
 
 export const SUBSTRAT_FAQ = [

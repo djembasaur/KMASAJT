@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import {
   COIR_VS_PEAT,
   CONTACT,
+  CROPS,
   IMG,
   SUBSTRAT_FAQ,
   SUBSTRATE_CERTS,
   SUBSTRATE_ORIGIN,
   SUBSTRATE_SPECS,
   USES,
+  type CropGroup,
 } from "../data";
 import { CTA, Icons, Kicker, Reveal } from "../lib/ui";
+import { Link } from "../lib/router";
 import PageHero from "../components/PageHero";
 import { FinalCTA } from "./Home";
 
@@ -271,6 +274,53 @@ function Uses() {
   );
 }
 
+const CROP_GROUPS: CropGroup[] = ["Bobičasto voće", "Povrće", "Ostalo"];
+
+function PogodneKulture() {
+  return (
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-24">
+      <Reveal className="max-w-2xl">
+        <Kicker>Pogodne kulture</Kicker>
+        <h2 className="mt-4 font-display font-black text-pine-900 tracking-tight text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.06]">
+          Mešavina za <em className="italic text-rasp-600">svaku kulturu</em>
+        </h2>
+        <p className="mt-5 text-[16px] leading-relaxed text-ink/75">
+          INSA REMMY supstrat je prilagođen potrebama svake kulture — pronađite
+          mešavinu za svoju.
+        </p>
+      </Reveal>
+
+      <div className="mt-12 space-y-10">
+        {CROP_GROUPS.map((group, gi) => (
+          <div key={group}>
+            <Reveal delay={gi * 80}>
+              <Kicker className="mb-4">{group}</Kicker>
+            </Reveal>
+            <div className="flex flex-wrap gap-3">
+              {CROPS.filter((c) => c.group === group).map((c, i) => {
+                const Ic = useIcon[c.icon] ?? Icons.leaf;
+                return (
+                  <Reveal key={c.slug} delay={gi * 80 + i * 60}>
+                    <Link
+                      to={c.to}
+                      className="group flex items-center gap-3 bg-cream border border-pine-800/12 px-5 py-3.5 font-display font-bold text-[18px] text-pine-900 hover:border-rasp-500/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                    >
+                      <span className="text-moss-500 group-hover:text-rasp-500 transition-colors">
+                        <Ic className="w-5.5 h-5.5" />
+                      </span>
+                      {c.name}
+                    </Link>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Climate() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
@@ -411,6 +461,7 @@ export default function Supstrat() {
       <Comparison />
       <Sizes />
       <Uses />
+      <PogodneKulture />
       <Climate />
       <Faq />
       <FinalCTA idPrefix="supstrat" />

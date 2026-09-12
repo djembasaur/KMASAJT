@@ -1,8 +1,7 @@
 import React from "react";
-import { CROPS, IMG } from "../data";
+import { CROPS } from "../data";
 import { Link, useRoute } from "../lib/router";
 import { CTA, Icons, Kicker, Reveal } from "../lib/ui";
-import PageHero from "../components/PageHero";
 
 const cropIcon: Record<string, (p: { className?: string }) => React.ReactElement> = {
   berry: Icons.berry,
@@ -19,28 +18,32 @@ export default function CropDetailPage() {
   if (!crop) return null;
 
   const otherCrops = CROPS.filter((c) => c.slug !== crop.slug);
-  const firstSentence = crop.intro.split(". ")[0] + ".";
 
   return (
     <>
-      <PageHero
-        kicker="INSA REMMY"
-        title={
-          <>
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 pt-12 pb-2 lg:pt-16 text-center">
+        <Reveal>
+          <Kicker className="justify-center">INSA REMMY</Kicker>
+          <h1 className="mt-4 font-display font-black text-pine-900 tracking-tight text-[clamp(2.1rem,4.6vw,3.2rem)] leading-[1.06]">
             Supstrat za <em className="italic text-rasp-600">{crop.nameAcc}</em>
-          </>
-        }
-        text={firstSentence}
-        img={IMG.coirBags}
-        alt="Profesionalne vreće INSA REMMY kokosovog supstrata"
-        note={crop.name}
-      >
-        <CTA id={`cta-crop-${crop.slug}-hero`} href="/kontakt" size="lg">
-          Zatražite ponudu
-        </CTA>
-      </PageHero>
+          </h1>
+        </Reveal>
+      </section>
 
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 lg:py-20">
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+        <Reveal variant="rv-scale" className="flex justify-center">
+          <div className="bg-paper border border-pine-800/12 p-6 sm:p-8">
+            <img
+              src={crop.img}
+              alt={`INSA REMMY supstrat za ${crop.nameAcc}`}
+              loading="eager"
+              className="w-full max-w-[280px] h-auto object-contain"
+            />
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 pb-16 lg:pb-20">
         <Reveal>
           <p className="text-[16.5px] leading-relaxed text-ink/80">{crop.intro}</p>
         </Reveal>
@@ -74,6 +77,12 @@ export default function CropDetailPage() {
             </div>
           </Reveal>
         )}
+
+        <Reveal delay={240} className="mt-10">
+          <CTA id={`cta-crop-${crop.slug}`} href="/kontakt" size="lg">
+            Zatražite ponudu
+          </CTA>
+        </Reveal>
       </section>
 
       <section className="bg-paper border-y border-pine-800/10">

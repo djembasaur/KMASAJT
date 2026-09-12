@@ -257,6 +257,7 @@ export type Crop = {
   nameAcc: string;
   group: CropGroup;
   icon: "berry" | "drop" | "leaf" | "sun" | "flower";
+  img: string;
   intro: string;
   spec: string;
   metaDescription: string;
@@ -272,6 +273,7 @@ export const CROPS: Crop[] = [
     nameAcc: "jagodu",
     group: "Bobičasto voće",
     icon: "berry",
+    img: img("jagoda.png"),
     intro:
       "INSA REMMY vreće koriste proizvođači jagoda širom sveta za berbu tokom cele godine. Veliku pažnju posvećujemo kvalitetu ispranog i dodatno ispranog supstrata, što je glavni razlog zašto naš supstrat daje jagode vrhunskog kvaliteta. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
     spec:
@@ -286,6 +288,7 @@ export const CROPS: Crop[] = [
     nameAcc: "malinu",
     group: "Bobičasto voće",
     icon: "berry",
+    img: img("malina.png"),
     intro:
       "INSA REMMY supstrati koriste se za proizvodnju malina tokom cele godine, bez obzira na klimatske promene. Naše posebne kokosove mešavine osmišljene su baš za maline, sa naglaskom na hidrataciju korena i sposobnost navodnjavanja. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
     spec:
@@ -305,6 +308,7 @@ export const CROPS: Crop[] = [
     nameAcc: "kupinu",
     group: "Bobičasto voće",
     icon: "berry",
+    img: img("kupina.png"),
     intro:
       "Naše kokosove mešavine dobro služe proizvođačima kupina jer nude supstrate koji se najbolje prilagođavaju različitim klimatskim uslovima i tradicionalnim načinima gajenja. Supstrati napravljeni od kvalitetnih sirovina pomažu korenu biljke da brzo usvaja hranljive materije. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
     spec:
@@ -319,6 +323,7 @@ export const CROPS: Crop[] = [
     nameAcc: "borovnicu",
     group: "Bobičasto voće",
     icon: "berry",
+    img: img("borovnica.png"),
     intro:
       "Godinama isporučujemo vrhunske kokosove mešavine proizvođačima borovnica širom sveta. INSA REMMY mešavine su omiljene među proizvođačima borovnica zbog jedinstvene teksture koja pomaže zdravom rastu biljke. Kako je borovnica dugoročna kultura, razvili smo posebne UV-otporne vreće koje traju do same berbe. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
     spec:
@@ -335,6 +340,7 @@ export const CROPS: Crop[] = [
     nameAcc: "paradajz",
     group: "Povrće",
     icon: "sun",
+    img: img("paradajz.png"),
     intro:
       "INSA REMMY kokosov supstrat je odličan medijum za gajenje paradajza. Zahvaljujući sirovinama koje se peru i suše na specijalizovanim mašinama, proizvođači ne moraju da brinu o korovu, insektima i bolestima. Nudimo više formata pakovanja prilagođenih vašem načinu gajenja, a rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
     spec:
@@ -349,6 +355,7 @@ export const CROPS: Crop[] = [
     nameAcc: "krastavac",
     group: "Povrće",
     icon: "drop",
+    img: img("krastavac.png"),
     intro:
       "Naši supstrati, napravljeni od kvalitetnih sirovina, dobro se prilagođavaju različitim klimatskim uslovima i načinima gajenja, pomažući biljkama da bujno rastu. INSA REMMY vreće i supstrati pogodni su za sve vrste krastavaca, uključujući salatne i kornišon sorte. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
     spec:
@@ -363,6 +370,7 @@ export const CROPS: Crop[] = [
     nameAcc: "papriku",
     group: "Povrće",
     icon: "sun",
+    img: img("paprika.png"),
     intro:
       "Paprika bolje uspeva u drobljenim kokosovim čipsovima i kokosovoj prašini nego u običnoj zemlji. Naši supstrati, napravljeni od kvalitetnih sirovina, dobro se prilagođavaju različitim klimatskim uslovima i načinima gajenja. Pošto se sve sirovine peru i suše na specijalizovanim mašinama, proizvođači ne moraju da brinu o korovu, insektima i bolestima. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
     spec:
@@ -377,6 +385,7 @@ export const CROPS: Crop[] = [
     nameAcc: "plavi patlidžan",
     group: "Povrće",
     icon: "leaf",
+    img: img("patlidzan.png"),
     intro:
       "INSA REMMY vreće čine gajenje plavog patlidžana jednostavnim i štite biljku od raznih bolesti. Za razliku od drugih bezemljišnih supstrata, kokosova prašina zadržava visoku provetrenost čak i kad je potpuno zasićena vodom. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
     spec:
@@ -391,6 +400,7 @@ export const CROPS: Crop[] = [
     nameAcc: "ružu",
     group: "Ostalo",
     icon: "flower",
+    img: img("ruze.png"),
     intro:
       "Razumemo koliko je važno gajiti kvalitetne ruže da bi se bilo konkurentno na globalnom tržištu cveća. Zato nudimo specijalizovane kokosove mešavine kao idealan medijum za rast, sa povećanom provetrenošću. Ovo rastresa supstrat i pojačava provetrenost, što rezultira boljim razvojem korena ruže. Naši supstrati tako dovode do boljeg rasta biljke i većeg prinosa. Pošto je drenaža ključna u gajenju ruža, posebno vodimo računa o pravilnoj drenaži za vaše pupoljke. Rupice za kapaljke, mešavine i dimenzije mogu se prilagoditi vašim potrebama.",
     spec:

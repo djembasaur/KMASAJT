@@ -622,3 +622,51 @@ export const SUBSIDY_ELIGIBILITY = [
     d: "Gazdinstvo mora biti u aktivnom statusu u Registru poljoprivrednih gazdinstava.",
   },
 ];
+export const SUBSIDY_MAX_AMOUNTS = [
+  {
+    l: "Maksimalan iznos po podnosiocu za sadni materijal",
+    v: "3.500.000 RSD",
+    d: "Za nabavku sertifikovanih sadnica voćaka i hmelja po jednoj kalendarskoj godini.",
+  },
+  {
+    l: "Maksimalan iznos po podnosiocu za naslone i mreže",
+    v: "5.000.000 RSD",
+    d: "Za nabavku kolja, stubova, žica, usidrivača i protivgradnih mreža po jednoj kalendarskoj godini.",
+  },
+  {
+    l: "Ukupan maksimalan iznos podsticaja",
+    v: "8.500.000 RSD",
+    d: "Maksimalni ukupni iznos podsticaja koji jedan korisnik može ostvariti u jednoj kalendarskoj godini.",
+  },
+];
+
+export const SUBSIDY_DOCS = [
+  "Zahtev za ostvarivanje prava na podsticaje (elektronski putem eAgrar-a)",
+  "Račun i dokaz o izvršenom plaćanju sadnog materijala",
+  "Sertifikat o zdravstvenom stanju i poreklu sadnog materijala (dobija se uz sadnice)",
+  "Potvrda o upisu u Registar poljoprivrednih gazdinstava (RPG) u aktivnom statusu",
+  "Kopija katastarskog plana / dokaz o vlasništvu ili zakupu zemljišta",
+];
+
+export const SUBSIDY_STEPS = [
+  {
+    no: "01",
+    title: "Provera uslova i registracije",
+    text: "Proverite da li je vaše gazdinstvo u aktivnom statusu u RPG-u i da li ispunjavate minimalne površinske uslove za vašu kulturu.",
+  },
+  {
+    no: "02",
+    title: "Nabavka sadnog materijala",
+    text: "Kupujete sertifikovane sadnice uz kompletnu prateću dokumentaciju, deklaracije i račun sa dokazom o uplati.",
+  },
+  {
+    no: "03",
+    title: "Podnošenje zahteva putem eAgrar-a",
+    text: "Zahtev se podnosi elektronski preko portala eAgrar u periodu trajanja javnog poziva Ministarstva poljoprivrede.",
+  },
+  {
+    no: "04",
+    title: "Obrada i isplata podsticaja",
+    text: "Nakon administrativne i terenske kontrole, donosi se rešenje i vrši isplata povraćaja od 40–70% na vaš namenski račun.",
+  },
+];

@@ -594,7 +594,7 @@ export const ARTICLES: Article[] = [
     excerpt:
       "Precizna ishrana počinje od poznate osnove — puferisan supstrat daje merljiv, ponovljiv sistem.",
     body: [
-      "U zemljištu je svaka parcela priča za sebe: pH, kapacitet za vodu i rezerve hraniva variraju i po metrima. U kokosovom supstratu početna tačka je ista za svaku vreću — pH 5.5–6.5 i EC < 0.2 mS/cm.",
+      "U zemljištu je svaka parcela priča za sebe: pH, kapacitet za vodu i rezerve hraniva variraju i po metrima. U kokosovom supstratu početna tačka je ista za svaky vreću — pH 5.5–6.5 i EC < 0.2 mS/cm.",
       "Kada je osnova poznata, program fertirigacije se gradi i koriguje na osnovu merenja, a ne pretpostavki. To donosi kontrolisanu ishranu, ujednačeniji rast biljaka i predvidljiviji prinos iz godine u godinu.",
       "Izrada programa fertirigacije je deo naše stručne podrške — od prve nedelje nakon sadnje do berbe.",
     ],
@@ -602,12 +602,7 @@ export const ARTICLES: Article[] = [
 ];
 
 /* ─────────────────────────────────────────────────────────────
-   Stranica /subvencije — sadržaj zasnovan na Pravilniku o
-   podsticajima za investicije u fizičku imovinu poljoprivrednog
-   gazdinstva kroz podršku podizanja višegodišnjih proizvodnih
-   zasada voćaka i hmelja ("Sl. glasnik RS" 58/2023, izmenjen i
-   dopunjen "Sl. glasnikom RS" 121/2025 od 31.12.2025 — izmene na
-   snazi za sezonu 2026).
+   Stranica /subvencije — podaci i prateće konstante
    ───────────────────────────────────────────────────────────── */
 
 export const SUBSIDY_ELIGIBILITY = [
@@ -622,6 +617,7 @@ export const SUBSIDY_ELIGIBILITY = [
     d: "Gazdinstvo mora biti u aktivnom statusu u Registru poljoprivrednih gazdinstava.",
   },
 ];
+
 export const SUBSIDY_MAX_AMOUNTS = [
   {
     l: "Maksimalan iznos po podnosiocu za sadni materijal",
@@ -668,5 +664,20 @@ export const SUBSIDY_STEPS = [
     no: "04",
     title: "Obrada i isplata podsticaja",
     text: "Nakon administrativne i terenske kontrole, donosi se rešenje i vrši isplata povraćaja od 40–70% na vaš namenski račun.",
+  },
+];
+
+export const SUBVENCIJE_FAQ = [
+  {
+    q: "Koji je procenat povraćaja sredstava za sadni materijal?",
+    a: "Povraćaj iznosi od 40% do 70% od neto vrednosti investicije (bez PDV-a), u zavisnosti od područja gde se nalazi gazdinstvo (područja sa otežanim uslovima rada u poljoprivredi ostvaruju veći procenat).",
+  },
+  {
+    q: "Da li pružate podršku pri pripremi dokumentacije?",
+    a: "Da, uz kupljene sadnice dobijate kompletnu originalnu dokumentaciju (sertifikate o zdravstvenom stanju, deklaracije i račune) potrebne za elektronsku prijavu na portalu eAgrar.",
+  },
+  {
+    q: "Kada se podnosi zahtev za subvencije?",
+    a: "Zahtev se podnosi po objavljivanju Javnog poziva od strane Ministarstva poljoprivrede, obično u toku tekuće godine nakon realizovane nabavke i sadnje.",
   },
 ];

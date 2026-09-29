@@ -78,7 +78,7 @@ function VarietyDetails() {
         <Reveal className="max-w-2xl">
           <Kicker light>Sorte u ponudi</Kicker>
           <h2 className="mt-4 font-display font-black tracking-tight text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.06]">
-            Tri remontantne sorte, <em className="italic text-honey-300">tri tržišna profila</em>
+            Dve remontantne sorte, <em className="italic text-honey-300">dva tržišna profila</em>
           </h2>
           <p className="mt-5 text-[16px] leading-relaxed text-sage-200/85">
             Sorte razvijene i selekcionisane za profesionalnu, intenzivnu proizvodnju —
@@ -285,14 +285,14 @@ export default function Sadnice() {
             <em className="italic text-rasp-600">Italije i Holandije</em>
           </>
         }
-        text="Originalne, EU-sertifikovane sadnice iz vodećih rasadnika — matični materijal vrhunskog kvaliteta, sa dokumentovanim poreklom i visokim zdravstvenim statusom. Tri remontantne sorte za intenzivnu proizvodnju."
+        text="Originalne, EU-sertifikovane sadnice iz vodećih rasadnika — matični materijal vrhunskog kvaliteta, sa dokumentovanim poreklom i visokim zdravstvenim statusom. Dve remontantne sorte za intenzivnu proizvodnju."
         img={IMG.nursery}
         alt="Sertifikovane sadnice maline"
         note="Sezona proleće / jesen 2027."
         chips={[
           { icon: <Icons.shield className="w-4 h-4 text-moss-500" />, label: "EU sertifikat" },
           { icon: <Icons.globe className="w-4 h-4 text-moss-500" />, label: "Italija & Holandija" },
-          { icon: <Icons.berry className="w-4 h-4 text-moss-500" />, label: "3 remontantne sorte" },
+          { icon: <Icons.berry className="w-4 h-4 text-moss-500" />, label: "2 remontantne sorte" },
         ]}
       >
         <CTA id="cta-sadnice-hero" href="/kontakt" size="lg">

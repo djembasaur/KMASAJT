@@ -48,7 +48,7 @@ export const TICKER = [
   "EU-sertifikovane sadnice iz Italije i Holandije",
   "Dostava širom Srbije",
   "Subvencije 40–70% za sertifikovan sadni materijal",
-  "Enrosadira® · Easy Rose® · Ofelia®",
+  "Enrosadira® · Ofelia®",
   "Kokosov supstrat: pH 5.5–6.5 · EC < 0.2 mS/cm",
 ];
 
@@ -143,16 +143,8 @@ export const VARIETIES = [
     traits: ["Krupan, čvrst plod", "Visok procenat prve klase", "Produžena sezona berbe"],
   },
   {
-    id: "easyrose",
-    no: "02",
-    name: "Easy Rose®",
-    badge: "Remontantna",
-    text: "Aromatičan, čvrst plod prepoznatljive svetloroze boje — odličan za transport i dug vek na polici. Izbor za tržišta osetljiva na izgled: supermarkete i izvoz.",
-    traits: ["Svetloroze boja ploda", "Odlična transportabilnost", "Dug vek na polici"],
-  },
-  {
     id: "ofelia",
-    no: "03",
+    no: "02",
     name: "Ofelia®",
     badge: "Remontantna",
     text: "Rana i rodna sorta izvanrednog kvaliteta. Ujednačen razvoj izdanaka olakšava planiranje berbe u kontrolisanim, intenzivnim sistemima proizvodnje.",
@@ -445,7 +437,7 @@ export const SADNICE_FAQ = [
   },
   {
     q: "Koje sorte su u ponudi?",
-    a: "Tri remontantne sorte razvijene za profesionalnu, intenzivnu proizvodnju: Enrosadira®, Easy Rose® i Ofelia®. Svaka pokriva drugačiji tržišni profil — od prve klase i produžene sezone do izvoza i supermarketa.",
+    a: "Dve remontantne sorte razvijene za profesionalnu, intenzivnu proizvodnju: Enrosadira® i Ofelia®. Pokrivaju drugačije tržišne profile — od prve klase i produžene sezone do izvoza i supermarketa.",
   },
   {
     q: "Koju gustinu sadnje da planiram?",
@@ -496,7 +488,7 @@ export const KONTAKT_FAQ = [
 ];
 
 export const INTERESTS = [
-  "Sadnice maline (Enrosadira / Easy Rose / Ofelia)",
+  "Sadnice maline (Enrosadira / Ofelia)",
   "Kokosov supstrat",
   "Sadnice + supstrat",
   "Subvencije i dokumentacija",
@@ -574,14 +566,13 @@ export const ARTICLES: Article[] = [
   },
   {
     cat: "Sadnice",
-    title: "Remontantne sorte za intenzivnu proizvodnju: Enrosadira, Easy Rose, Ofelia",
+    title: "Remontantne sorte za intenzivnu proizvodnju: Enrosadira, Ofelia",
     mins: 6,
     excerpt:
-      "Tri sorte razvijene i selekcionisane za profesionalnu proizvodnju — gde se prinos, klasa i ujednačenost mere unapred.",
+      "Dve sorte razvijene i selekcionisane za profesionalnu proizvodnju — gde se prinos, klasa i ujednačenost mere unapred.",
     body: [
       "Enrosadira® je stabilna i pouzdana: krupan, čvrst plod, visok procenat prve klase i produžena sezona berbe. Odlično se slaže sa kokosovim supstratom, što je čini prvim izborom za intenzivne sisteme.",
-      "Easy Rose® donosi aromatičan, čvrst plod prepoznatljive svetloroze boje — odlična transportabilnost i dug vek na polici preporučuju je za supermarkete i izvozna tržišta osetljiva na izgled ploda.",
-      "Ofelia® je rana i rodna sorta izvanrednog kvaliteta, sa ujednačenim razvojem izdanaka koji olakšava planiranje berbe u kontrolisanim uslovima. Kombinacijom sve tri sorte pokrivate sezonu i različite tržišne kanale.",
+      "Ofelia® je rana i rodna sorta izvanrednog kvaliteta, sa ujednačenim razvojem izdanaka koji olakšava planiranje berbe u kontrolisanim uslovima. Kombinacijom sorti pokrivate sezonu i različite tržišne kanale.",
     ],
   },
   {
@@ -628,114 +619,6 @@ export const SUBSIDY_ELIGIBILITY = [
   {
     icon: "doc",
     t: "Aktivna registracija u RPG",
-    d: "Gazdinstvo mora biti upisano u Registar poljoprivrednih gazdinstava i imati obnovljenu registraciju za tekuću godinu.",
+    d: "Gazdinstvo mora biti u aktivnom statusu u Registru poljoprivrednih gazdinstava.",
   },
-  {
-    icon: "check",
-    t: "Izmirene obaveze",
-    d: "Bez neizmirenih dugovanja prema Ministarstvu poljoprivrede po osnovu ranijih podsticaja, subvencija ili kredita, uz izmirene obaveze po osnovu javnih prihoda.",
-  },
-  {
-    icon: "globe",
-    t: "Nepovezan dobavljač",
-    d: "Dobavljač sadnica i podnosilac zahteva ne smeju biti povezana lica.",
-  },
-  {
-    icon: "leaf",
-    t: "Površina zasada u propisanim granicama",
-    d: "0,1–5 ha za jagodasto voće (malina, kupina, borovnica, jagoda) i 0,2–10 ha za drvenaste vrste voćaka.",
-  },
-  {
-    icon: "chart",
-    t: "Gustina sadnje po tablici pravilnika",
-    d: "Gustina mora odgovarati propisanim opsezima — npr. za malinu 6.500–25.000 sadnica po hektaru, zavisno od sorte.",
-  },
-  {
-    icon: "berry",
-    t: "Minimalan prijem sadnica",
-    d: "Najmanje 90% posađenih sadnica mora biti primljeno (prihvaćeno) prilikom terenske provere.",
-  },
-] as const;
-
-export const SUBSIDY_MAX_AMOUNTS = [
-  { k: "Nabavka sadnica voćaka i hmelja", old: "2.500.000", new: "3.500.000" },
-  { k: "Nabavka naslona", old: "825.000", new: "1.000.000" },
-  { k: "Priprema zemljišta / supstrat sa sertifikatom", old: "375.000", new: "400.000" },
-  { k: "Analiza zemljišta", old: "100.000", new: "100.000" },
-  { k: "Ukupno po korisniku godišnje", old: "3.000.000", new: "5.000.000" },
-] as const;
-
-export const SUBSIDY_STEPS = [
-  {
-    no: "01",
-    title: "Registracija/obnova u eRPG",
-    text: "Ako gazdinstvo još nije registrovano ili nije obnovljeno za tekuću godinu, prvi korak je registracija preko portala eAgrar (erpg.eagrar.gov.rs) — potrebna je eID identifikacija (ConsentID aplikacija ili kvalifikovani elektronski sertifikat).",
-  },
-  {
-    no: "02",
-    title: "Kupovina sertifikovanog sadnog materijala",
-    text: "Nabavite sadnice — i, ako je primenljivo, supstrat sa sertifikatom — od dobavljača koji nije povezano lice sa vama, uz urednu fakturu ili e-fakturu sa jasno iskazanom cenom i PDV-om.",
-  },
-  {
-    no: "03",
-    title: "Priprema dokumentacije",
-    text: "Računi, dokaz o plaćanju, katastarski plan, ugovor o zakupu ako je primenljivo i sertifikat supstrata ako je primenljivo — sve se prilaže elektronski, kroz eAgrar.",
-  },
-  {
-    no: "04",
-    title: "Praćenje kalendara javnih poziva",
-    text: "Ministarstvo poljoprivrede objavljuje godišnji kalendar podsticaja unapred; poziv za podizanje višegodišnjih zasada voća se tipično raspisuje u jesenjem periodu. Za 2026. godinu postoji poseban izuzetak koji dozvoljava prijavu i za investicije iz 2024/2025.",
-  },
-  {
-    no: "05",
-    title: "Podnošenje elektronskog zahteva",
-    text: "Kompletan obrazac i sva dokumentacija podnose se online, preko softverskog rešenja eAgrar/ePodsticaji, potpisano kvalifikovanom elektronskom identifikacijom.",
-  },
-  {
-    no: "06",
-    title: "Administrativna i terenska provera",
-    text: "Uprava za agrarna plaćanja proverava zahtev, a nadležni inspektor izlazi na teren da pregleda zasad, gustinu sadnje i broj primljenih sadnica pre donošenja rešenja.",
-  },
-  {
-    no: "07",
-    title: "Isplata na namenski račun",
-    text: "Ako je zahtev odobren, sredstva se isplaćuju na namenski poljoprivredni račun prijavljen u Registru.",
-  },
-] as const;
-
-export const SUBSIDY_DOCS = [
-  "Račun ili e-faktura na ime podnosioca — sa jasno iskazanom jediničnom i osnovnom cenom, PDV-om i ukupnom cenom",
-  "Otpremnica (ili međunarodni tovarni list ako su sadnice uvezene direktno)",
-  "Dokaz o izvršenom plaćanju — izvod banke, SWIFT potvrda za uvoz ili fiskalni isečak",
-  "Kopija plana katastarske parcele (razmera 1:1.000 do 1:2.880)",
-  "Ugovor o zakupu/korišćenju zemljišta ako niste vlasnik (min. 7 godina za voćke, min. 2 godine za jagodu)",
-  "Za pravna lica i preduzetnike: potvrde iz APR-a (bez zabrane obavljanja delatnosti, privrednog prestupa, likvidacije ili stečaja)",
-  "Za zasade sa supstratom u saksijama/vrećama: sertifikat supstrata je obavezan uslov",
-] as const;
-
-export const SUBVENCIJE_FAQ = [
-  {
-    q: "Da li subvencija pokriva i kokosov supstrat?",
-    a: "Da — za proizvodne zasade borovnice i/ili maline sa sadnicama u saksijama/vrećama sa supstratom, nabavka supstrata sa sertifikatom je prihvatljiv trošak. Prihvatljiv trošak iznosi do 300 dinara po sadnici za malinu i do 1.400 dinara po sadnici za borovnicu.",
-  },
-  {
-    q: "Da li moram već da imam RPG da bih kupio sadnice?",
-    a: "Ne za samu kupovinu, ali da za ostvarivanje prava na subvenciju — gazdinstvo mora biti upisano u Registar poljoprivrednih gazdinstava i u aktivnom statusu.",
-  },
-  {
-    q: "Da li mogu da se prijavim za subvenciju za zasad koji sam podigao pre raspisivanja poziva za 2026?",
-    a: "Da — prema izuzetku u izmeni pravilnika za 2026. godinu, investicije i zasadi iz perioda 2024–2025. mogu biti prihvatljivi. Detalje proveravamo zajedno prema vašem konkretnom slučaju.",
-  },
-  {
-    q: "Ko dolazi na teren da proveri zasad?",
-    a: "Nadležni poljoprivredni inspektor — administrativna provera zahteva prethodi terenskoj proveri gustine sadnje i broja primljenih sadnica.",
-  },
-  {
-    q: "Koliko traje ceo proces?",
-    a: "Od registracije do isplate prođe po pravilu nekoliko meseci — tačni rokovi zavise od godišnjeg kalendara javnih poziva, pa ne obećavamo fiksne termine koji se menjaju iz godine u godinu.",
-  },
-  {
-    q: "Da li INSA KMA Fields garantuje da ću dobiti subvenciju?",
-    a: "Ne — odluku donosi Uprava za agrarna plaćanja na osnovu administrativne i terenske provere. Mi pomažemo sa dokumentacijom, sertifikatom supstrata i savetima, ali odobrenje nije u našoj nadležnosti.",
-  },
-] as const;
+];

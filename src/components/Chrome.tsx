@@ -221,7 +221,7 @@ export function Footer() {
           <ul className="space-y-2.5 text-[15px]">
             <li>
               <Link to="/sadnice" className="text-sage-300 hover:text-honey-300 transition-colors">
-                Enrosadira® · Easy Rose® · Ofelia®
+                Enrosadira® · Ofelia®
               </Link>
             </li>
             <li>

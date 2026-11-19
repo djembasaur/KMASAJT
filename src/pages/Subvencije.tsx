@@ -161,7 +161,7 @@ function Amounts() {
             Za sadnice maline domaćih sorti (Gradina, Krupna dvorodna) i kupine (Čačanska
             bestrna), upisane u Registar sorti, podsticaj za nabavku sadnica uvećava se za
             dodatnih 100.000 dinara po hektaru podignutog zasada. Uvozne sorte koje nudi INSA
-            KMA Fields (Enrosadira®, Easy Rose®, Ofelia®) nisu domaće/odomaćene sorte, pa ovaj
+            KMA Fields (Enrosadira®, Ofelia®) nisu domaće/odomaćene sorte, pa ovaj
             dodatni podsticaj po pravilu ne važi za njih — osnovni podsticaj od 40–70% i dalje
             važi.
           </p>
@@ -258,7 +258,7 @@ function WhyInsaKma() {
           <p className="mt-5 text-[16px] leading-relaxed text-sage-200/90">
             Subvencija važi isključivo za sertifikovan sadni materijal. Sadnice malina koje INSA
             KMA Fields uvozi iz Holandije i Italije su vrhunske, dokumentovane sorte
-            (Enrosadira®, Easy Rose®, Ofelia®), a INSA REMMY kokosov supstrat je prihvatljiv
+            (Enrosadira®, Ofelia®), a INSA REMMY kokosov supstrat je prihvatljiv
             trošak u okviru pripreme zemljišta.
           </p>
         </Reveal>

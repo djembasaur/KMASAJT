@@ -100,7 +100,7 @@ function Hero() {
             {[
               { i: Icons.shield, t: "EU sertifikat" },
               { i: Icons.globe, t: "Poreklo: Italija & Holandija" },
-              { i: Icons.berry, t: "Enrosadira · Easy Rose · Ofelia" },
+              { i: Icons.berry, t: "Enrosadira · Ofelia" },
             ].map((c, idx) => (
               <span
                 key={idx}

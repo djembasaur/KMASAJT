@@ -60,7 +60,7 @@ function Pillars() {
     {
       n: "I",
       t: "Uvoz sertifikovanih sadnica",
-      d: "Enrosadira®, Easy Rose® i Ofelia® — originalne linije iz renomiranih rasadnika, sa EU sertifikatom i sledljivošću.",
+      d: "Enrosadira® i Ofelia® — originalne linije iz renomiranih rasadnika, sa EU sertifikatom i sledljivošću.",
       to: "/sadnice" as const,
       link: "Pogledajte sadnice",
     },
